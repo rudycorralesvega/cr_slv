@@ -12,6 +12,8 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+*.yml
+*.qmd
 .Rproj.user/
 .Rhistory
 .RData
