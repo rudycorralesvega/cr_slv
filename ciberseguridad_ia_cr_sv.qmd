@@ -7,6 +7,7 @@ date-format: "D [de] MMMM [de] YYYY"
 lang: es
 format:
   revealjs:
+    output-file: index.html
     slide-number: c/t
     transition: slide
     background-transition: fade
