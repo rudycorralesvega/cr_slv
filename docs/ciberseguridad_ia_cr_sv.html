@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<script src="ciberseguridad_ia_cr_sv_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ciberseguridad_ia_cr_sv_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ciberseguridad_ia_cr_sv_files/libs/quarto-html/popper.min.js"></script>
+<script src="ciberseguridad_ia_cr_sv_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ciberseguridad_ia_cr_sv_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ciberseguridad_ia_cr_sv_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ciberseguridad_ia_cr_sv_files/libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
+
+  <meta name="author" content="Superintendencia de Pensiones (SUPEN), Costa Rica">
+  <title>Riesgos de las tecnologías emergentes y ciberseguridad financiera en tiempos de la IA</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="ciberseguridad_ia_cr_sv_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ciberseguridad_ia_cr_sv_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="ciberseguridad_ia_cr_sv_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link href="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="module" src="ciberseguridad_ia_cr_sv_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="ciberseguridad_ia_cr_sv_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+  <script src="ciberseguridad_ia_cr_sv_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="ciberseguridad_ia_cr_sv_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&amp;family=Public+Sans:wght@400;600;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --r-main-font-size:27px;
+      --azul:#12355b; --cielo:#4a90c8; --rojo:#c8102e;
+      --verde:#2a9d8f; --ambar:#e9a23b; --papel:#f7f9fb; --tinta:#1d2733;
+    }
+    .reveal{font-family:"Public Sans",system-ui,sans-serif; color:var(--tinta);}
+    .reveal .slides{text-align:left;}
+    .reveal h1,.reveal h2,.reveal h3{font-family:"Literata",Georgia,serif; color:var(--azul); text-transform:none; letter-spacing:-.01em;}
+    .reveal h2{font-size:1.55em; border-left:10px solid var(--cielo); padding-left:.45em;}
+    .reveal .slide-background.title-bg,.reveal section.title-bg{}
+    .reveal .footer{font-size:.42em; color:#5b6b7c;}
+    .reveal .progress{color:var(--rojo);}
+    .reveal .title-slide h1.title{font-size:1.9em; line-height:1.15;}
+    .reveal .title-slide .subtitle{color:var(--cielo); font-family:"Public Sans";}
+    .franja{height:10px; background:linear-gradient(90deg,var(--azul) 0 33%, #fff 33% 40%, var(--rojo) 40% 60%, #fff 60% 67%, var(--cielo) 67% 100%); border-radius:5px; margin:.4em 0 .8em;}
+    .tarjeta{background:var(--papel); border-left:6px solid var(--cielo); padding:.5em .75em; border-radius:6px; margin:.3em 0; font-size:.92em;}
+    .tarjeta.riesgo{border-left-color:var(--rojo);}
+    .tarjeta.control{border-left-color:var(--verde);}
+    .tarjeta.pension{border-left-color:var(--ambar); background:#fff8ec;}
+    .sabia{background:var(--azul); color:#fff; padding:.7em 1em; border-radius:10px; font-size:.8em;}
+    .sabia b{color:var(--ambar);}
+    .pregunta{font-family:"Literata",serif; font-size:1.5em; color:var(--azul); line-height:1.25; margin-top:1.2em;}
+    .cifra{font-family:"Literata",serif; font-size:2.6em; color:var(--rojo); font-weight:700; line-height:1;}
+    .pie{font-size:.5em; color:#5b6b7c;}
+    .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:.5em; margin-top:.4em;}
+    .kpi{background:var(--papel); border-radius:8px; padding:.45em .6em; border-top:5px solid var(--azul);}
+    .kpi .v{font-family:"Literata",serif; font-size:1.25em; font-weight:700; color:var(--azul);}
+    .kpi .e{font-size:.6em; color:#4a5a6a;}
+    .fb{padding:.5em .8em; border-radius:8px; font-size:.85em; margin-top:.4em;}
+    .fb.ok{background:#e3f4f1; border-left:6px solid var(--verde);}
+    .fb.bad{background:#fde8eb; border-left:6px solid var(--rojo);}
+    .fb.neutro{background:var(--papel); border-left:6px solid #9aa8b6;}
+    .mensaje{background:#fff; border:1px solid #cfd8e2; border-radius:12px; padding:.6em .9em; font-size:.72em; box-shadow:0 2px 0 #cfd8e2;}
+    .barra{height:26px; background:#e5ebf1; border-radius:13px; overflow:hidden;}
+    .barra > div{height:100%; border-radius:13px; transition:width .4s;}
+    .reveal form{font: 19px/1.35 "Public Sans",system-ui,sans-serif !important; --label-width:170px;} .reveal form input[type=number]{width:6.2em !important; max-width:none !important; flex-shrink:0;}
+    .reveal .observablehq{font-size:.9em;}
+    .reveal section.seccion h1{color:#fff; font-size:2.2em;}
+    .reveal section.seccion p{color:#d6e4f2;}
+    .flujo{display:flex; gap:16px; margin:.5em 0;}
+    .flujo .paso{flex:1; background:var(--papel); border-radius:10px; padding:.7em .75em; font-size:.98em; position:relative; border-top:5px solid var(--cielo);}
+    .flujo .paso.ia{border-top-color:var(--rojo); background:#fff4f5;}
+    .flujo .paso .ico{display:block; font-size:2em; line-height:1.25;}
+    .flujo .paso small{display:block; color:#4a5a6a; font-size:.85em; margin-top:.2em;}
+    .flujo .paso:not(:last-child)::after{content:"→"; position:absolute; right:-14px; top:38%; color:var(--rojo); font-weight:700;}
+    .reveal table{font-size:.66em; border-collapse:collapse;}
+    .reveal table th{background:var(--azul); color:#fff; padding:.4em .6em;}
+    .reveal table td{padding:.4em .6em; border-bottom:1px solid #dfe6ee;}
+    .frase{font-family:"Literata",serif; font-size:1.7em; line-height:1.2; color:var(--azul); font-weight:700;}
+    .tablero{width:100%; font-size:.8em;}
+    .tablero .fila{display:grid; grid-template-columns:2.2fr 2fr .9fr .3fr; gap:.6em; align-items:center; padding:.35em 0; border-bottom:1px solid #e3e9ef;}
+    .tablero .sem{width:18px; height:18px; border-radius:50%;}
+    .reveal section.cierre h2{color:#fff; border-left-color:var(--rojo);}
+    .reveal section.cierre .frase{margin:.8em 0 .3em;}
+    .reveal form label{font-size:19px !important;}
+    @media (prefers-reduced-motion: reduce){ .barra > div{transition:none;} }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Riesgos de las tecnologías emergentes y ciberseguridad financiera en tiempos de la IA</h1>
+  <p class="subtitle">La experiencia de Costa Rica, en diálogo con El Salvador</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Superintendencia de Pensiones (SUPEN), Costa Rica
+</div>
+</div>
+</div>
+
+  <p class="date">11 de noviembre de 2026</p>
+</section>
+<section id="antes-de-empezar" class="slide level2">
+<h2>Antes de empezar</h2>
+<div class="franja">
+
+</div>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Objetivo de la sesión</strong></p>
+<p>Compartir, desde la experiencia costarricense, una lectura práctica de los riesgos que traen las tecnologías emergentes y de cómo fortalecer la ciberseguridad de las entidades financieras, con foco en <strong>los fondos de pensiones</strong>: el ahorro de toda una vida de las personas trabajadoras.</p>
+</div><div class="column" style="width:45%;">
+<div class="sabia">
+<p><strong>Una idea para llevar:</strong> en pensiones, un ciberincidente no es solo un problema tecnológico. Es un problema de <strong>confianza intergeneracional</strong>: si el afiliado deja de confiar, se activa el riesgo político.</p>
+</div>
+</div></div>
+</section>
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ol type="1">
+<li>¿Por qué importa en pensiones?</li>
+<li>Tecnologías emergentes y sus riesgos</li>
+<li>Ejemplos en fondos de pensiones, del escenario al control</li>
+<li>Costa Rica: de la crisis de 2022 a la estrategia</li>
+<li>Fortalecer la ciberseguridad en tiempos de IA</li>
+<li>Ideas para El Salvador</li>
+</ol>
+</section>
+<section id="la-pregunta-central" class="slide level2">
+<h2>La pregunta central</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<div class="pregunta" style="margin-top:.3em">
+<p>¿Cómo aprovechar la IA sin convertir la confianza financiera en una vulnerabilidad?</p>
+</div>
+<p><strong>Tres ideas para llevarse</strong></p>
+<ol type="1">
+<li>La IA no elimina los riesgos conocidos: los <strong>acelera, escala y conecta</strong>.</li>
+<li>En pensiones, una falla afecta datos, patrimonio y decisiones de largo plazo.</li>
+<li>La ciberseguridad efectiva combina <strong>gobierno, tecnología, personas y recuperación</strong>.</li>
+</ol>
+</div><div class="column" style="width:42%;">
+<div class="tarjeta">
+<p><strong>Para quién es esta sesión.</strong> No es una clase técnica: es una guía para gestores de riesgo. Tres verbos la ordenan: <strong>entender, valorar y actuar</strong>.</p>
+</div>
+</div></div>
+<aside class="notes">
+<p>Mensaje de apertura: no se trata de frenar la innovación, sino de gobernar su velocidad y su impacto sobre las personas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="de-la-máquina-de-vapor-a-la-ia" class="slide level2">
+<h2>De la máquina de vapor a la IA</h2>
+<p>Cada revolución tecnológica amplificó una capacidad humana distinta.</p>
+<div class="flujo">
+<div class="paso">
+<p><span class="ico">⚙️</span> <strong>Máquina de vapor</strong> <small>Siglo XVIII. Amplificó la fuerza física.</small></p>
+</div>
+<div class="paso">
+<p><span class="ico">💡</span> <strong>Electricidad</strong> <small>Siglo XIX. Amplificó la producción.</small></p>
+</div>
+<div class="paso">
+<p><span class="ico">💻</span> <strong>Computación</strong> <small>Mediados del XX. Amplificó el cálculo.</small></p>
+</div>
+<div class="paso">
+<p><span class="ico">🌐</span> <strong>Internet</strong> <small>Fines del XX. Amplificó la conexión.</small></p>
+</div>
+<div class="paso ia">
+<p><span class="ico">🧠</span> <strong>Inteligencia artificial</strong> <small>Hoy. Amplifica decisiones.</small></p>
+</div>
+</div>
+<div class="fragment">
+<div class="tarjeta riesgo">
+<p><strong>La diferencia:</strong> cuando una tecnología amplifica decisiones, también amplifica errores, sesgos, fraudes y dependencias. Por eso la IA no es solo un tema de TI: es un tema de <strong>gobierno corporativo</strong>.</p>
+</div>
+</div>
+<p><span class="pie">Referencia conceptual: Bank for International Settlements (BIS), trabajos sobre inteligencia artificial y estabilidad financiera.</span></p>
+<aside class="notes">
+<p>Pregunta al público: ¿qué tienen en común estas cinco tecnologías? Todas cambiaron el empleo, la productividad y también los riesgos. Con la electricidad llegaron los incendios eléctricos y los códigos de construcción; con internet, el fraude en línea y la ciberseguridad. La regulación siempre llega detrás de la tecnología; el reto es acortar esa distancia.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="por-qué-importa-en-pensiones" class="title-slide slide level1 seccion center" data-background-color="#12355b">
+<h1>¿Por qué importa en pensiones?</h1>
+<p>Lo que está en juego no es un servidor: es la vejez de millones de personas.</p>
+</section>
+<section id="los-fondos-de-pensiones-son-un-blanco-atractivo" class="slide level2">
+<h2>Los fondos de pensiones son un blanco atractivo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tarjeta riesgo">
+<p><strong>Mucho dinero, muchos datos.</strong> Concentran activos de largo plazo y expedientes con identidad, salario, beneficiarios y cuentas bancarias de casi toda la fuerza laboral formal.</p>
+</div>
+<div class="tarjeta riesgo">
+<p><strong>Horizontes larguísimos.</strong> Un dato robado hoy sigue siendo útil para un delincuente durante décadas (fecha de nacimiento, beneficiarios, historial laboral).</p>
+</div>
+<div class="tarjeta riesgo">
+<p><strong>Población vulnerable.</strong> Pensionados y personas próximas a retirarse son objetivo frecuente de fraude por ingeniería social.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="tarjeta pension">
+<p><strong>Costa Rica:</strong> Régimen Obligatorio de Pensiones Complementarias (ROP), Fondo de Capitalización Laboral (FCL), fondos voluntarios y regímenes básicos como el IVM de la CCSS.</p>
+</div>
+<div class="tarjeta pension">
+<p><strong>El Salvador:</strong> sistema de ahorro para pensiones administrado por AFP y supervisado por la Superintendencia del Sistema Financiero, con un sistema reformado en años recientes.</p>
+</div>
+<div class="tarjeta control">
+<p><strong>Común a ambos:</strong> el valor cuota se calcula a diario, los pagos de pensión tienen fechas fijas y la confianza pública es el principal activo.</p>
+</div>
+</div></div>
+<div class="sabia">
+<p><strong>Regla pedagógica:</strong> en pensiones, ciberseguridad significa proteger a la vez la <strong>identidad</strong>, el <strong>saldo</strong>, la <strong>decisión</strong> y el <strong>derecho futuro</strong> de cada persona.</p>
+</div>
+<aside class="notes">
+<p>Subrayar que en ambos países la supervisión de pensiones depende de procesos diarios automatizados (valoración, conciliación con custodios, recaudación). Si uno de esos procesos se cae, el impacto llega al afiliado en horas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="tecnologías-emergentes-y-sus-riesgos" class="title-slide slide level1 seccion center" data-background-color="#12355b">
+<h1>Tecnologías emergentes y sus riesgos</h1>
+<p>Toda tecnología que crea valor también crea una nueva superficie de ataque.</p>
+</section>
+<section id="siete-tecnologías-siete-preguntas-para-el-supervisor" class="slide level2">
+<h2>Siete tecnologías, siete preguntas para el supervisor</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">IA generativa</a></li><li><a href="#tabset-1-2">Deepfakes</a></li><li><a href="#tabset-1-3">Ransomware con IA</a></li><li><a href="#tabset-1-4">Nube y terceros</a></li><li><a href="#tabset-1-5">Open finance y APIs</a></li><li><a href="#tabset-1-6">Criptoactivos</a></li><li><a href="#tabset-1-7">Computación cuántica</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li><strong>Qué es:</strong> modelos que redactan, resumen, conversan y programan.</li>
+<li><strong>Riesgo:</strong> respuestas inventadas (“alucinaciones”), fuga de datos al pegar información confidencial en herramientas públicas, dependencia de un proveedor.</li>
+<li><strong>Pregunta del supervisor:</strong> ¿la entidad sabe <strong>qué modelos usa, quién los aprobó y con qué datos</strong>?</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li><strong>Qué es:</strong> voz, imagen o video sintéticos casi indistinguibles de los reales.</li>
+<li><strong>Riesgo:</strong> suplantación del afiliado para retirar fondos, o del gerente para ordenar transferencias.</li>
+<li><strong>Caso real:</strong> Arup en 2024 (una empresa multinacional de ingeniería) perdió unos <strong>US$ 25 millones</strong> después de una videollamada donde todos los “ejecutivos” eran falsos.</li>
+</ul>
+</div>
+<div id="tabset-1-3">
+<ul>
+<li><strong>Qué es:</strong> secuestro de sistemas y robo de datos para extorsionar.</li>
+<li><strong>Riesgo:</strong> interrupción de pagos, imposibilidad de calcular el valor cuota, filtración masiva de expedientes.</li>
+<li><strong>Pregunta del supervisor:</strong> ¿cuántas horas puede operar la entidad <strong>sin sus sistemas</strong>?</li>
+</ul>
+</div>
+<div id="tabset-1-4">
+<ul>
+<li><strong>Qué es:</strong> infraestructura, custodios, proveedores de software y fintech que operan procesos críticos.</li>
+<li><strong>Riesgo:</strong> concentración en pocos proveedores globales; un fallo de un tercero afecta a muchas entidades a la vez.</li>
+<li><strong>Pregunta del supervisor:</strong> ¿existe un <strong>plan de salida</strong> y pruebas de continuidad con el proveedor?</li>
+</ul>
+</div>
+<div id="tabset-1-5">
+<ul>
+<li><strong>Qué es:</strong> intercambio de datos entre entidades mediante interfaces programables.</li>
+<li><strong>Riesgo:</strong> APIs mal protegidas exponen datos o permiten operaciones no autorizadas.</li>
+<li><strong>Pregunta del supervisor:</strong> ¿quién puede consultar el saldo de un afiliado y con qué consentimiento?</li>
+</ul>
+</div>
+<div id="tabset-1-6">
+<ul>
+<li><strong>Qué es:</strong> activos digitales basados en registros distribuidos.</li>
+<li><strong>Riesgo:</strong> volatilidad, custodia de llaves privadas, lavado de dinero, fraudes de inversión dirigidos a ahorrantes.</li>
+<li><strong>Pregunta del supervisor:</strong> ¿qué exposición directa o indirecta tienen los fondos y cómo se informa al afiliado?</li>
+</ul>
+</div>
+<div id="tabset-1-7">
+<ul>
+<li><strong>Qué es:</strong> computadoras que en el futuro podrían romper el cifrado que hoy protege transacciones.</li>
+<li><strong>Riesgo:</strong> “cosechar ahora, descifrar después”: se roban datos cifrados hoy para leerlos en unos años.</li>
+<li><strong>Dato:</strong> en agosto de 2024 el National Institute of Standards and Technology (NIST) publicó sus primeros estándares de <strong>criptografía poscuántica</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Elegir dos o tres pestañas según el interés del público. Para la pestaña de criptoactivos, invitar a la delegación salvadoreña a compartir su experiencia supervisora con estos activos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mapa-interactivo-de-riesgos" class="slide level2">
+<h2>Mapa interactivo de riesgos</h2>
+<p>Mueva el control para ver cómo cambia el <strong>riesgo residual</strong> cuando la entidad madura sus controles. Los puntos grises son el riesgo inherente; los de color, el residual.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="289" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 288;"><span id="cb1-289"><a href="" aria-label="289"></a>viewof controles <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">90</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Madurez de controles (%)"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="294" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 293;"><span id="cb2-294"><a href="" aria-label="294"></a>riesgos <span class="op">=</span> [</span>
+<span id="cb2-295"><a href="" aria-label="295"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"IA generativa"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">4.5</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">3.8</span>}<span class="op">,</span></span>
+<span id="cb2-296"><a href="" aria-label="296"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"Deepfakes"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">4.2</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">4.3</span>}<span class="op">,</span></span>
+<span id="cb2-297"><a href="" aria-label="297"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"Ransomware con IA"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">3.8</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">4.8</span>}<span class="op">,</span></span>
+<span id="cb2-298"><a href="" aria-label="298"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"Nube y terceros"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">3.0</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">4.5</span>}<span class="op">,</span></span>
+<span id="cb2-299"><a href="" aria-label="299"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"APIs / open finance"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">3.2</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">3.4</span>}<span class="op">,</span></span>
+<span id="cb2-300"><a href="" aria-label="300"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"Criptoactivos"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">2.6</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">3.0</span>}<span class="op">,</span></span>
+<span id="cb2-301"><a href="" aria-label="301"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"Cuántica"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">1.6</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">4.9</span>}<span class="op">,</span></span>
+<span id="cb2-302"><a href="" aria-label="302"></a>  {<span class="dt">t</span><span class="op">:</span> <span class="st">"Sesgo en modelos"</span><span class="op">,</span> <span class="dt">p</span><span class="op">:</span> <span class="fl">3.5</span><span class="op">,</span> <span class="dt">i</span><span class="op">:</span> <span class="fl">3.0</span>}</span>
+<span id="cb2-303"><a href="" aria-label="303"></a>]</span>
+<span id="cb2-304"><a href="" aria-label="304"></a>residual <span class="op">=</span> riesgos<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({<span class="op">...</span>d<span class="op">,</span></span>
+<span id="cb2-305"><a href="" aria-label="305"></a>  <span class="dt">p2</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="fl">0.3</span><span class="op">,</span> d<span class="op">.</span><span class="at">p</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> <span class="fl">0.65</span> <span class="op">*</span> controles <span class="op">/</span> <span class="dv">100</span>))<span class="op">,</span></span>
+<span id="cb2-306"><a href="" aria-label="306"></a>  <span class="dt">i2</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="fl">0.3</span><span class="op">,</span> d<span class="op">.</span><span class="at">i</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> <span class="fl">0.35</span> <span class="op">*</span> controles <span class="op">/</span> <span class="dv">100</span>))</span>
+<span id="cb2-307"><a href="" aria-label="307"></a>}))</span>
+<span id="cb2-308"><a href="" aria-label="308"></a>celdas <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> <span class="dv">25</span>}<span class="op">,</span> (_<span class="op">,</span> k) <span class="kw">=&gt;</span> {</span>
+<span id="cb2-309"><a href="" aria-label="309"></a>  <span class="kw">const</span> x <span class="op">=</span> k <span class="op">%</span> <span class="dv">5</span><span class="op">,</span> y <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(k <span class="op">/</span> <span class="dv">5</span>)<span class="op">;</span></span>
+<span id="cb2-310"><a href="" aria-label="310"></a>  <span class="cf">return</span> {<span class="dt">x1</span><span class="op">:</span> x<span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> x <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> y<span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> y <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">s</span><span class="op">:</span> (x <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (y <span class="op">+</span> <span class="dv">1</span>)}<span class="op">;</span></span>
+<span id="cb2-311"><a href="" aria-label="311"></a>})</span>
+<span id="cb2-312"><a href="" aria-label="312"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-313"><a href="" aria-label="313"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">1050</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">140</span><span class="op">,</span> <span class="dt">style</span><span class="op">:</span> {<span class="dt">fontSize</span><span class="op">:</span> <span class="st">"14px"</span>}<span class="op">,</span></span>
+<span id="cb2-314"><a href="" aria-label="314"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Probabilidad →"</span>}<span class="op">,</span></span>
+<span id="cb2-315"><a href="" aria-label="315"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"↑ Impacto"</span>}<span class="op">,</span></span>
+<span id="cb2-316"><a href="" aria-label="316"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">type</span><span class="op">:</span> <span class="st">"linear"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">25</span>]<span class="op">,</span> <span class="dt">range</span><span class="op">:</span> [<span class="st">"#d9f0e8"</span><span class="op">,</span> <span class="st">"#fbe9b7"</span><span class="op">,</span> <span class="st">"#f6b4b4"</span>]}<span class="op">,</span></span>
+<span id="cb2-317"><a href="" aria-label="317"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-318"><a href="" aria-label="318"></a>    Plot<span class="op">.</span><span class="fu">rect</span>(celdas<span class="op">,</span> {<span class="dt">x1</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="st">"x2"</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="st">"y1"</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="st">"y2"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"s"</span><span class="op">,</span> <span class="dt">inset</span><span class="op">:</span> <span class="dv">1</span>})<span class="op">,</span></span>
+<span id="cb2-319"><a href="" aria-label="319"></a>    Plot<span class="op">.</span><span class="fu">link</span>(residual<span class="op">,</span> {<span class="dt">x1</span><span class="op">:</span> <span class="st">"p"</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="st">"p2"</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="st">"i2"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#4a90c8"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4,3"</span><span class="op">,</span> <span class="dt">markerEnd</span><span class="op">:</span> <span class="st">"arrow"</span>})<span class="op">,</span></span>
+<span id="cb2-320"><a href="" aria-label="320"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(residual<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"p"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">6</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#9aa8b6"</span>})<span class="op">,</span></span>
+<span id="cb2-321"><a href="" aria-label="321"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(residual<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"p2"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i2"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#12355b"</span>})<span class="op">,</span></span>
+<span id="cb2-322"><a href="" aria-label="322"></a>    Plot<span class="op">.</span><span class="fu">text</span>(residual<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"p2"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i2"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"t"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">13</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#1d2733"</span>})</span>
+<span id="cb2-323"><a href="" aria-label="323"></a>  ]</span>
+<span id="cb2-324"><a href="" aria-label="324"></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<p><span class="pie">Valores ilustrativos para la discusión; no corresponden a una medición oficial.</span></p>
+</section>
+<section id="anatomía-de-un-ataque-potenciado-con-ia" class="slide level2">
+<h2>Anatomía de un ataque potenciado con IA</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {"themeVariables": {"fontSize": "20px", "fontFamily": "Public Sans, sans-serif"}, "flowchart": {"nodeSpacing": 30, "rankSpacing": 40, "padding": 14}}}%%
+flowchart LR
+  A["&lt;b&gt;1. Reconocimiento&lt;/b&gt;&lt;br/&gt;IA analiza redes sociales&lt;br/&gt;de funcionarios"] --&gt; B["&lt;b&gt;2. Engaño&lt;/b&gt;&lt;br/&gt;correo o voz clonada&lt;br/&gt;hiperpersonalizada"]
+  B --&gt; C["&lt;b&gt;3. Acceso&lt;/b&gt;&lt;br/&gt;credenciales robadas&lt;br/&gt;sin autenticación robusta"]
+  C --&gt; D["&lt;b&gt;4. Movimiento lateral&lt;/b&gt;&lt;br/&gt;hacia sistemas de&lt;br/&gt;afiliados y custodia"]
+  D --&gt; E["&lt;b&gt;5. Doble extorsión&lt;/b&gt;&lt;br/&gt;cifrado + robo&lt;br/&gt;de expedientes"]
+  style A fill:#e8f1fa,stroke:#4a90c8,stroke-width:2px,color:#12355b
+  style B fill:#e8f1fa,stroke:#4a90c8,stroke-width:2px,color:#12355b
+  style C fill:#fde8eb,stroke:#c8102e,stroke-width:2px,color:#12355b
+  style D fill:#fde8eb,stroke:#c8102e,stroke-width:2px,color:#12355b
+  style E fill:#c8102e,color:#fff,stroke:#c8102e,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="tarjeta control">
+<p><strong>Mensaje clave:</strong> la IA no inventó nuevos tipos de ataque; los hizo <strong>más baratos, más rápidos y más creíbles</strong>. Cada eslabón puede romperse con un control sencillo: concientización, Multi-Factor Authentication (MFA), segmentación y respaldos.</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="ejemplos-concretos-en-pensiones" class="title-slide slide level1 seccion center" data-background-color="#12355b">
+<h1>Ejemplos concretos en pensiones</h1>
+<p>Seis historias que podrían ocurrir mañana en cualquiera de nuestros dos países.</p>
+</section>
+<section id="seis-escenarios-para-discutir" class="slide level2">
+<h2>Seis escenarios para discutir</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tarjeta pension fragment">
+<p><strong>1. La voz de don Carlos.</strong> Un delincuente clona la voz de un pensionado con un audio de WhatsApp y llama al centro de servicio para pedir información de su saldo.</p>
+</div>
+<div class="tarjeta pension fragment">
+<p><strong>2. El chatbot que “inventa”.</strong> El asistente virtual de una operadora responde con información falsa: <strong>riesgo de conducta</strong>.</p>
+</div>
+<div class="tarjeta pension fragment">
+<p><strong>3. Traslado no autorizado.</strong> Con datos filtrados, alguien solicita trasladar la cuenta de un afiliado a otra administradora.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="tarjeta pension fragment">
+<p><strong>4. Sin valor cuota.</strong> Un ransomware afecta al proveedor que concilia carteras con el custodio. No se publica el valor cuota y no se pueden procesar aportes ni retiros.</p>
+</div>
+<div class="tarjeta pension fragment">
+<p><strong>5. Datos envenenados.</strong> Un modelo de asignación de activos se entrena con datos manipulados y mueve un portafolio distinto al aprobado por la entidad.</p>
+</div>
+<div class="tarjeta pension fragment">
+<p><strong>6. La filtración silenciosa.</strong> Expedientes con beneficiarios y salarios se venden en la web oscura y alimentan durante años estafas dirigidas a familias de pensionados.</p>
+</div>
+</div></div>
+</section>
+<section id="del-escenario-al-control" class="slide level2">
+<h2>Del escenario al control</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tarjeta riesgo">
+<p><strong>La videollamada del “gerente”.</strong> Tesorería recibe una videollamada urgente; imagen y voz parecen del gerente. Se pide cambiar la cuenta de un proveedor crítico.</p>
+</div>
+<ul>
+<li>Doble aprobación <strong>fuera del canal original</strong>.</li>
+<li>Palabra o mecanismo de verificación para instrucciones excepcionales.</li>
+<li>Simulacros con deepfakes, no solo con correos de phishing.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="tarjeta riesgo">
+<p><strong>El chatbot “convincente”.</strong> Una persona pregunta si puede retirar hoy todo su ahorro. El asistente responde con seguridad usando una regla desactualizada.</p>
+</div>
+<ul>
+<li>Base normativa controlada y <strong>fechada</strong>.</li>
+<li>Respuesta con fuente visible y vigencia.</li>
+<li><strong>Escalamiento humano</strong> para decisiones de alto impacto.</li>
+<li>Pruebas con preguntas adversariales y casos límite.</li>
+</ul>
+</div></div>
+<div class="sabia">
+<p><strong>La IA vuelve creíble la historia, pero el control sigue siendo humano y procedimental.</strong> Una respuesta fluida no es lo mismo que una respuesta jurídicamente correcta.</p>
+</div>
+</section>
+<section id="ia-en-inversiones-cuando-muchos-modelos-piensan-igual" class="slide level2">
+<h2>IA en inversiones: cuando muchos modelos piensan igual</h2>
+<div class="flujo">
+<div class="paso">
+<p><strong>Datos</strong> <small>Mercado, emisores, clima, noticias</small></p>
+</div>
+<div class="paso">
+<p><strong>Modelo</strong> <small>Señal, clasificación o pronóstico</small></p>
+</div>
+<div class="paso">
+<p><strong>Decisión</strong> <small>Asignación, cobertura o alerta</small></p>
+</div>
+<div class="paso ia">
+<p><strong>Impacto en el fondo</strong> <small>Rendimiento, liquidez, concentración</small></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="tarjeta riesgo">
+<p><strong>Dato contaminado.</strong> Genera señales falsas o movimientos de cartera injustificados.</p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="tarjeta riesgo">
+<p><strong>Modelos correlacionados.</strong> Muchas entidades reaccionan igual y amplifican la volatilidad.</p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="tarjeta riesgo">
+<p><strong>Automatización excesiva.</strong> La recomendación se vuelve decisión sin juicio fiduciario.</p>
+</div>
+</div></div>
+<div class="fragment">
+<div class="sabia">
+<p><strong>¿Sabía que…?</strong> El 6 de mayo de 2010, en el llamado <em>flash crash</em>, el índice Dow Jones cayó cerca de mil puntos en minutos y se recuperó casi igual de rápido, en un episodio donde la negociación automatizada amplificó el movimiento. Para un fondo de pensiones, la lección es clara: <strong>IA como apoyo analítico, con límites, trazabilidad, validación independiente y decisión humana</strong>.</p>
+</div>
+</div>
+</section>
+<section id="sabía-que" class="slide level2">
+<h2>¿Sabía que…?</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="sabia">
+<p><strong>1988.</strong> El “gusano Morris” afectó a una parte importante de la incipiente internet y motivó la creación del primer equipo de respuesta a incidentes.</p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="sabia">
+<p><strong>1989.</strong> El primer ransomware conocido se distribuyó en <strong>disquetes</strong> y pedía enviar el pago por correo postal a un apartado en Panamá.</p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="sabia">
+<p><strong>“Phishing”</strong> viene de <em>fishing</em> (pescar): el delincuente lanza un anzuelo y espera que alguien muerda. La “ph” es un guiño a la jerga hacker de los años noventa.</p>
+</div>
+</div></div>
+<p><br></p>
+<div class="pregunta fragment">
+<p>Más de treinta y cinco años después, el anzuelo sigue siendo el mismo: <strong>la confianza de las personas</strong>. Lo que cambió es que ahora la IA lo fabrica a la medida.</p>
+</div>
+</section></section>
+<section>
+<section id="lección-aprendida-costa-rica-2022" class="title-slide slide level1 seccion center" data-background-color="#c8102e">
+<h1>Lección aprendida: Costa Rica 2022</h1>
+<p>Lo que vivimos y lo que aprendimos.</p>
+</section>
+<section id="una-crisis-nacional-de-ciberseguridad" class="slide level2">
+<h2>Una crisis nacional de ciberseguridad</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="fragment">
+<p><strong>Abril 2022.</strong> El grupo Conti ataca al Ministerio de Hacienda y a otras instituciones públicas. Se afectan sistemas tributarios y aduaneros.</p>
+</div>
+<div class="fragment">
+<p><strong>8 de mayo 2022.</strong> El Gobierno declara <strong>emergencia nacional</strong>, un hecho sin precedentes en la región por un ciberataque.</p>
+</div>
+<div class="fragment">
+<p><strong>31 de mayo 2022.</strong> Un ataque del grupo Hive afecta a la <strong>Caja Costarricense de Seguro Social</strong>, institución que administra la salud y el régimen de pensiones IVM.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="fragment">
+<div class="tarjeta control">
+<p><strong>Lecciones para el sector financiero y de pensiones</strong></p>
+<ul>
+<li>La continuidad debe incluir <strong>procesos manuales</strong> probados.</li>
+<li>La comunicación oportuna al ciudadano reduce el pánico y el fraude oportunista.</li>
+<li>La coordinación interinstitucional es tan importante como la tecnología.</li>
+<li>Las entidades supervisadas reforzaron su ciberhigiene y su vigilancia de terceros.</li>
+</ul>
+</div>
+</div>
+</div></div>
+</section>
+<section id="de-la-crisis-a-la-estrategia" class="slide level2">
+<h2>De la crisis a la estrategia</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tarjeta control">
+<p><strong>Estrategia nacional.</strong> La Estrategia Nacional de Ciberseguridad 2023–2027 (MICITT) prioriza gobernanza, resiliencia, capacidades, cooperación y un enfoque centrado en las personas.</p>
+</div>
+<div class="tarjeta control">
+<p><strong>Gobierno y gestión de TI.</strong> El marco del CONASSIF refuerza gobierno, riesgo tecnológico, ciberseguridad, continuidad y control de terceros como responsabilidades institucionales.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="tarjeta control">
+<p><strong>Gestión de riesgo en SUPEN.</strong> La evaluación tecnológica se integra al perfil de riesgo de cada entidad.</p>
+</div>
+<div class="tarjeta pension">
+<p><strong>Adopción gradual de IA en pensiones.</strong> Hoy se concentra en apoyo operativo; se espera expansión hacia servicio, cumplimiento, ciberseguridad, riesgo operacional e inversiones.</p>
+</div>
+</div></div>
+<p><span class="pie">Fuentes: MICITT, Estrategia Nacional de Ciberseguridad 2023–2027; normativa CONASSIF; documentos internos SUPEN 2026.</span></p>
+</section></section>
+<section>
+<section id="fortalecer-la-ciberseguridad-en-tiempos-de-ia" class="title-slide slide level1 seccion center" data-background-color="#12355b">
+<h1>Fortalecer la ciberseguridad en tiempos de IA</h1>
+<p>De la tecnología a la gobernanza, y de la gobernanza a la cultura.</p>
+</section>
+<section id="seis-funciones-de-un-programa-de-ciberseguridad" class="slide level2">
+<h2>Seis funciones de un programa de ciberseguridad</h2>
+<p><strong>Gobernar</strong> como función central.</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="tarjeta control">
+<p><strong>Gobernar.</strong> La junta directiva fija el apetito de riesgo cibernético y de IA, asigna responsables y pide cuentas.</p>
+</div>
+<div class="tarjeta control">
+<p><strong>Identificar.</strong> Inventario de activos, datos de afiliados, modelos de IA y terceros críticos.</p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="tarjeta control">
+<p><strong>Proteger.</strong> Autenticación, mínimo privilegio, cifrado, segmentación, “confianza cero” y capacitación continua.</p>
+</div>
+<div class="tarjeta control">
+<p><strong>Detectar.</strong> Monitoreo 24/7, analítica con IA para detectar retiros y traslados anómalos.</p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="tarjeta control">
+<p><strong>Responder.</strong> Planes de incidente probados, protocolos de comunicación al afiliado y al supervisor.</p>
+</div>
+<div class="tarjeta control">
+<p><strong>Recuperar.</strong> Respaldos inmutables y fuera de línea, tiempos de recuperación medidos.</p>
+</div>
+</div></div>
+</section>
+<section id="la-ia-también-defiende" class="slide level2">
+<h2>La IA también defiende</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Usos defensivos</strong></p>
+<ul>
+<li>Detección de patrones anómalos en retiros, traslados y cambios de cuenta.</li>
+<li>Biometría para resistir deepfakes.</li>
+<li>Clasificación automática de alertas en el centro de monitoreo.</li>
+<li>Revisión asistida de contratos con terceros y de cumplimiento normativo.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Condiciones para usarla bien</strong></p>
+<ul>
+<li>Inventario de modelos y responsable por cada uno.</li>
+<li>Humano en el circuito para decisiones que afectan derechos del afiliado.</li>
+<li>Pruebas de sesgo, explicabilidad y desempeño.</li>
+<li>Política institucional de uso de IA generativa por colaboradores.</li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="sabia">
+<p><strong>Regla de oro:</strong> si un modelo de IA puede cambiar la pensión de una persona, alguien con nombre y apellido debe poder explicar por qué.</p>
+</div>
+</div>
+</section>
+<section id="gobernar-la-ia-en-cinco-capas" class="slide level2">
+<h2>Gobernar la IA en cinco capas</h2>
+<div class="flujo">
+<div class="paso">
+<p><span class="ico">🏛️</span> <strong>Gobierno</strong> <small>Responsables, apetito de riesgo y rendición de cuentas</small></p>
+</div>
+<div class="paso">
+<p><span class="ico">🗂️</span> <strong>Datos</strong> <small>Calidad, privacidad, linaje y acceso</small></p>
+</div>
+<div class="paso">
+<p><span class="ico">🤖</span> <strong>Modelo</strong> <small>Pruebas, explicabilidad y límites</small></p>
+</div>
+<div class="paso">
+<p><span class="ico">🛡️</span> <strong>Operación</strong> <small>Monitoreo, incidentes y terceros</small></p>
+</div>
+<div class="paso">
+<p><span class="ico">🔄</span> <strong>Recuperación</strong> <small>Continuidad, restauración y aprendizaje</small></p>
+</div>
+</div>
+<div class="fragment">
+<div class="sabia">
+<p><strong>Principio rector:</strong> ninguna decisión crítica debe depender de una tecnología que la organización no pueda <strong>comprender, vigilar, sustituir o detener</strong>.</p>
+</div>
+</div>
+</section>
+<section id="actividad-dónde-pondría-el-control" class="slide level2">
+<h2>Actividad: ¿dónde pondría el control?</h2>
+<p>Una administradora quiere usar IA para atender consultas de afiliados. ¿Cuál es el mejor enfoque?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="648" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 647;"><span id="cb3-648"><a href="" aria-label="648"></a>viewof dondeControl <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([</span>
+<span id="cb3-649"><a href="" aria-label="649"></a>  <span class="st">"A. Bloquear toda la IA"</span><span class="op">,</span></span>
+<span id="cb3-650"><a href="" aria-label="650"></a>  <span class="st">"B. Revisar solo al proveedor"</span><span class="op">,</span></span>
+<span id="cb3-651"><a href="" aria-label="651"></a>  <span class="st">"C. Controlar el ciclo completo"</span></span>
+<span id="cb3-652"><a href="" aria-label="652"></a>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Su respuesta"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="657" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 656;"><span id="cb4-657"><a href="" aria-label="657"></a>fbControl <span class="op">=</span> ({</span>
+<span id="cb4-658"><a href="" aria-label="658"></a>  <span class="st">"A. Bloquear toda la IA"</span><span class="op">:</span> [<span class="st">"bad"</span><span class="op">,</span> <span class="st">"Reduce oportunidades, pero no elimina el uso informal de herramientas por el personal ni los riesgos que ya traen los terceros."</span>]<span class="op">,</span></span>
+<span id="cb4-659"><a href="" aria-label="659"></a>  <span class="st">"B. Revisar solo al proveedor"</span><span class="op">:</span> [<span class="st">"bad"</span><span class="op">,</span> <span class="st">"Es necesario pero insuficiente: los datos, los usuarios, los procesos y las decisiones siguen siendo responsabilidad de la entidad."</span>]<span class="op">,</span></span>
+<span id="cb4-660"><a href="" aria-label="660"></a>  <span class="st">"C. Controlar el ciclo completo"</span><span class="op">:</span> [<span class="st">"ok"</span><span class="op">,</span> <span class="st">"Criterio recomendado: inventario, clasificación del caso por impacto, datos, modelo, proveedor, usuario, decisión, monitoreo y retiro del sistema."</span>]</span>
+<span id="cb4-661"><a href="" aria-label="661"></a>})</span>
+<span id="cb4-662"><a href="" aria-label="662"></a>dondeControl <span class="op">==</span> <span class="kw">null</span></span>
+<span id="cb4-663"><a href="" aria-label="663"></a>  <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;div class="fb neutro"&gt;Vote a mano alzada y luego seleccione la opción más votada.&lt;/div&gt;`</span></span>
+<span id="cb4-664"><a href="" aria-label="664"></a>  <span class="op">:</span> <span class="fu">html</span><span class="vs">`&lt;div class="fb </span><span class="sc">${</span>fbControl[dondeControl][<span class="dv">0</span>]<span class="sc">}</span><span class="vs">"&gt;</span><span class="sc">${</span>fbControl[dondeControl][<span class="dv">0</span>] <span class="op">===</span> <span class="st">"ok"</span> <span class="op">?</span> <span class="st">"✔ "</span> <span class="op">:</span> <span class="st">"✖ "</span><span class="sc">}${</span>fbControl[dondeControl][<span class="dv">1</span>]<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-4-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-4-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Dejar que el público defienda la opción A: suele aparecer. Usarla para explicar que prohibir empuja el uso a la sombra (“shadow AI”), que es más riesgoso que un uso gobernado.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="diez-preguntas-antes-de-aprobar-un-caso-de-ia" class="slide level2">
+<h2>Diez preguntas antes de aprobar un caso de IA</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li>¿Qué decisión apoya o automatiza?</li>
+<li>¿A quién puede perjudicar?</li>
+<li>¿Qué datos utiliza y con qué base legal?</li>
+<li>¿Podemos explicar el resultado?</li>
+<li>¿Cómo se prueba antes de operar?</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<ol start="6" type="1">
+<li>¿Quién responde por el error?</li>
+<li>¿Qué depende del proveedor?</li>
+<li>¿Cómo detectamos degradación o ataque?</li>
+<li>¿Cómo se detiene y se revierte?</li>
+<li>¿Qué aprende la organización del incidente?</li>
+</ol>
+</div></div>
+<div class="tarjeta pension">
+<p><strong>Aplicado a pensiones:</strong> si el caso toca saldos, retiros, traslados, beneficiarios o asignación de activos, las preguntas 2, 4 y 9 deberían tener respuesta escrita antes de salir a producción.</p>
+</div>
+</section>
+<section id="calculadora-el-costo-de-un-ransomware-en-pensiones" class="slide level2">
+<h2>Calculadora: el costo de un ransomware en pensiones</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="699" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 698;"><span id="cb5-699"><a href="" aria-label="699"></a>viewof afiliados <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50000</span><span class="op">,</span> <span class="dv">3000000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">800000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">10000</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Afiliados"</span>})</span>
+<span id="cb5-700"><a href="" aria-label="700"></a>viewof pensionados <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">200000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">20000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1000</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Pensionados con pago mensual"</span>})</span>
+<span id="cb5-701"><a href="" aria-label="701"></a>viewof dias <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">30</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Días sin sistemas"</span>})</span>
+<span id="cb5-702"><a href="" aria-label="702"></a>viewof tramites <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Trámites diarios por cada 1 000 afiliados"</span>})</span>
+<span id="cb5-703"><a href="" aria-label="703"></a>viewof costoDia <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10000</span><span class="op">,</span> <span class="dv">500000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">80000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">10000</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Costo diario de respuesta (US$)"</span>})</span>
+<span id="cb5-704"><a href="" aria-label="704"></a>viewof filtrado <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"% de expedientes filtrados"</span>})</span>
+<span id="cb5-705"><a href="" aria-label="705"></a>viewof costoReg <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Costo por expediente filtrado (US$)"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:58%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="711" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 710;"><span id="cb6-711"><a href="" aria-label="711"></a>fmt <span class="op">=</span> (x) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(x)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"es-CR"</span>)</span>
+<span id="cb6-712"><a href="" aria-label="712"></a>usd <span class="op">=</span> (x) <span class="kw">=&gt;</span> <span class="st">"US$ "</span> <span class="op">+</span> (x <span class="op">&gt;=</span> <span class="fl">1e6</span> <span class="op">?</span> (x <span class="op">/</span> <span class="fl">1e6</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>) <span class="op">+</span> <span class="st">" M"</span> <span class="op">:</span> <span class="fu">fmt</span>(x))</span>
+<span id="cb6-713"><a href="" aria-label="713"></a>tAfect <span class="op">=</span> afiliados <span class="op">/</span> <span class="dv">1000</span> <span class="op">*</span> tramites <span class="op">*</span> dias</span>
+<span id="cb6-714"><a href="" aria-label="714"></a>pagosRiesgo <span class="op">=</span> pensionados <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">1</span><span class="op">,</span> dias <span class="op">/</span> <span class="dv">30</span>)</span>
+<span id="cb6-715"><a href="" aria-label="715"></a>expedientes <span class="op">=</span> afiliados <span class="op">*</span> filtrado <span class="op">/</span> <span class="dv">100</span></span>
+<span id="cb6-716"><a href="" aria-label="716"></a>costoTotal <span class="op">=</span> dias <span class="op">*</span> costoDia <span class="op">+</span> expedientes <span class="op">*</span> costoReg</span>
+<span id="cb6-717"><a href="" aria-label="717"></a><span class="fu">html</span><span class="vs">`&lt;div class="kpis"&gt;</span></span>
+<span id="cb6-718"><a href="" aria-label="718"></a><span class="vs">  &lt;div class="kpi"&gt;&lt;div class="v"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(tAfect)<span class="sc">}</span><span class="vs">&lt;/div&gt;&lt;div class="e"&gt;trámites de afiliados detenidos&lt;/div&gt;&lt;/div&gt;</span></span>
+<span id="cb6-719"><a href="" aria-label="719"></a><span class="vs">  &lt;div class="kpi"&gt;&lt;div class="v"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(pagosRiesgo)<span class="sc">}</span><span class="vs">&lt;/div&gt;&lt;div class="e"&gt;pagos de pensión en riesgo de atraso (esperado)&lt;/div&gt;&lt;/div&gt;</span></span>
+<span id="cb6-720"><a href="" aria-label="720"></a><span class="vs">  &lt;div class="kpi"&gt;&lt;div class="v"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(expedientes)<span class="sc">}</span><span class="vs">&lt;/div&gt;&lt;div class="e"&gt;expedientes expuestos&lt;/div&gt;&lt;/div&gt;</span></span>
+<span id="cb6-721"><a href="" aria-label="721"></a><span class="vs">  &lt;div class="kpi" style="border-top-color:#c8102e"&gt;&lt;div class="v" style="color:#c8102e"&gt;</span><span class="sc">${</span><span class="fu">usd</span>(costoTotal)<span class="sc">}</span><span class="vs">&lt;/div&gt;&lt;div class="e"&gt;costo directo estimado&lt;/div&gt;&lt;/div&gt;</span></span>
+<span id="cb6-722"><a href="" aria-label="722"></a><span class="vs">&lt;/div&gt;`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="725" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 724;"><span id="cb7-725"><a href="" aria-label="725"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb7-726"><a href="" aria-label="726"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">700</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">220</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">200</span><span class="op">,</span> <span class="dt">style</span><span class="op">:</span> {<span class="dt">fontSize</span><span class="op">:</span> <span class="st">"14px"</span>}<span class="op">,</span></span>
+<span id="cb7-727"><a href="" aria-label="727"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"US$"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> <span class="st">"s"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb7-728"><a href="" aria-label="728"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
+<span id="cb7-729"><a href="" aria-label="729"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb7-730"><a href="" aria-label="730"></a>    Plot<span class="op">.</span><span class="fu">barX</span>([</span>
+<span id="cb7-731"><a href="" aria-label="731"></a>      {<span class="dt">c</span><span class="op">:</span> <span class="st">"Respuesta y recuperación"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> dias <span class="op">*</span> costoDia}<span class="op">,</span></span>
+<span id="cb7-732"><a href="" aria-label="732"></a>      {<span class="dt">c</span><span class="op">:</span> <span class="st">"Notificación y monitoreo"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> expedientes <span class="op">*</span> costoReg}</span>
+<span id="cb7-733"><a href="" aria-label="733"></a>    ]<span class="op">,</span> {<span class="dt">y</span><span class="op">:</span> <span class="st">"c"</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="st">"v"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> [<span class="st">"#12355b"</span><span class="op">,</span> <span class="st">"#c8102e"</span>]})<span class="op">,</span></span>
+<span id="cb7-734"><a href="" aria-label="734"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb7-735"><a href="" aria-label="735"></a>  ]</span>
+<span id="cb7-736"><a href="" aria-label="736"></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p><span class="pie">Modelo didáctico con supuestos simplificados. No incluye el costo reputacional ni la pérdida de confianza, que suelen ser los mayores.</span></p>
+</div></div>
+</section>
+<section id="juego-phishing-o-legítimo" class="slide level2">
+<h2>Juego: ¿phishing o legítimo?</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Mensaje 1</a></li><li><a href="#tabset-2-2">Mensaje 2</a></li><li><a href="#tabset-2-3">Mensaje 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="mensaje">
+<p>📱 <strong>SMS de “SUPERINTENDENCIA”:</strong> Su cuenta de pensión será BLOQUEADA hoy a las 5 p.m. Actualice sus datos en <strong>supen-retiros.co/validar</strong> para evitar la pérdida de sus ahorros.</p>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="755" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 754;"><span id="cb8-755"><a href="" aria-label="755"></a>viewof r1 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="st">"Phishing"</span><span class="op">,</span> <span class="st">"Legítimo"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Su veredicto"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb9" data-startfrom="759" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 758;"><span id="cb9-759"><a href="" aria-label="759"></a>retro <span class="op">=</span> (r<span class="op">,</span> ok<span class="op">,</span> txt) <span class="kw">=&gt;</span> r <span class="op">==</span> <span class="kw">null</span></span>
+<span id="cb9-760"><a href="" aria-label="760"></a>  <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;div class="fb neutro"&gt;Elija una opción para ver la explicación.&lt;/div&gt;`</span></span>
+<span id="cb9-761"><a href="" aria-label="761"></a>  <span class="op">:</span> r <span class="op">===</span> ok</span>
+<span id="cb9-762"><a href="" aria-label="762"></a>    <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;div class="fb ok"&gt;✔ Correcto. </span><span class="sc">${</span>txt<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
+<span id="cb9-763"><a href="" aria-label="763"></a>    <span class="op">:</span> <span class="fu">html</span><span class="vs">`&lt;div class="fb bad"&gt;✖ No es así. </span><span class="sc">${</span>txt<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
+<span id="cb9-764"><a href="" aria-label="764"></a><span class="fu">retro</span>(r1<span class="op">,</span> <span class="st">"Phishing"</span><span class="op">,</span> <span class="st">"Urgencia artificial, amenaza de pérdida y un dominio que imita al oficial. Un supervisor no bloquea cuentas por SMS ni pide datos por enlaces."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-9-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-9-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="mensaje">
+<p>📧 <strong>Correo de su operadora:</strong> Su estado de cuenta del trimestre ya está disponible. Por seguridad, no incluimos enlaces: ingrese escribiendo usted mismo la dirección de nuestro sitio oficial o desde la aplicación.</p>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="773" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 772;"><span id="cb10-773"><a href="" aria-label="773"></a>viewof r2 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="st">"Phishing"</span><span class="op">,</span> <span class="st">"Legítimo"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Su veredicto"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-10" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb11" data-startfrom="776" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 775;"><span id="cb11-776"><a href="" aria-label="776"></a><span class="fu">retro</span>(r2<span class="op">,</span> <span class="st">"Legítimo"</span><span class="op">,</span> <span class="st">"No pide datos, no presiona y orienta al canal oficial. Aun así, la buena práctica es verificar siempre por un canal que usted controle."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-11" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="mensaje">
+<p>🎥 <strong>Videollamada del “gerente general”:</strong> Necesito que hoy mismo, antes del cierre, transfiera los fondos de la operación de inversión a esta nueva cuenta del custodio. Es confidencial: no lo comente con nadie, ni siquiera con riesgos.</p>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb12" data-startfrom="786" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 785;"><span id="cb12-786"><a href="" aria-label="786"></a>viewof r3 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="st">"Phishing"</span><span class="op">,</span> <span class="st">"Legítimo"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Su veredicto"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-12" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb13" data-startfrom="789" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 788;"><span id="cb13-789"><a href="" aria-label="789"></a><span class="fu">retro</span>(r3<span class="op">,</span> <span class="st">"Phishing"</span><span class="op">,</span> <span class="st">"Patrón típico de fraude del CEO, hoy reforzado con deepfakes: urgencia, secreto y cambio de cuenta. La defensa es un procedimiento de doble verificación por otro canal, sin excepciones."</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-13" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="qué-tan-fuerte-es-una-contraseña-frente-a-una-gpu-moderna" class="slide level2">
+<h2>¿Qué tan fuerte es una contraseña frente a una GPU moderna?</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb14" data-startfrom="798" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 797;"><span id="cb14-798"><a href="" aria-label="798"></a>viewof clave <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"Escriba una contraseña de ejemplo (nunca una real)"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"Pensiones2026"</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">420</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-14" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb15" data-startfrom="803" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 802;"><span id="cb15-803"><a href="" aria-label="803"></a>pool <span class="op">=</span> (<span class="ss">/</span><span class="sc">[a-z]</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(clave) <span class="op">?</span> <span class="dv">26</span> <span class="op">:</span> <span class="dv">0</span>) <span class="op">+</span> (<span class="ss">/</span><span class="sc">[A-Z]</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(clave) <span class="op">?</span> <span class="dv">26</span> <span class="op">:</span> <span class="dv">0</span>) <span class="op">+</span> (<span class="ss">/</span><span class="sc">[0-9]</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(clave) <span class="op">?</span> <span class="dv">10</span> <span class="op">:</span> <span class="dv">0</span>) <span class="op">+</span> (<span class="ss">/</span><span class="sc">[^A-Za-z0-9]</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(clave) <span class="op">?</span> <span class="dv">33</span> <span class="op">:</span> <span class="dv">0</span>)</span>
+<span id="cb15-804"><a href="" aria-label="804"></a>comun <span class="op">=</span> <span class="ss">/</span><span class="sc">(</span><span class="ss">pension</span><span class="sc">|</span><span class="ss">password</span><span class="sc">|</span><span class="ss">contrase</span><span class="sc">|</span><span class="ss">123</span><span class="sc">|</span><span class="ss">qwerty</span><span class="sc">|</span><span class="ss">costa</span><span class="sc">|</span><span class="ss">salvador</span><span class="sc">|</span><span class="ss">2025</span><span class="sc">|</span><span class="ss">2026</span><span class="sc">|</span><span class="ss">admin</span><span class="sc">)</span><span class="ss">/i</span><span class="op">.</span><span class="fu">test</span>(clave)</span>
+<span id="cb15-805"><a href="" aria-label="805"></a>bits <span class="op">=</span> clave<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> <span class="dv">0</span> <span class="op">:</span> clave<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log2</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(pool<span class="op">,</span> <span class="dv">1</span>)) <span class="op">*</span> (comun <span class="op">?</span> <span class="fl">0.55</span> <span class="op">:</span> <span class="dv">1</span>)</span>
+<span id="cb15-806"><a href="" aria-label="806"></a>segundos <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>(<span class="dv">2</span><span class="op">,</span> bits) <span class="op">/</span> <span class="dv">2</span> <span class="op">/</span> <span class="fl">1e11</span></span>
+<span id="cb15-807"><a href="" aria-label="807"></a>tiempo <span class="op">=</span> segundos <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">?</span> <span class="st">"menos de un segundo"</span></span>
+<span id="cb15-808"><a href="" aria-label="808"></a>  <span class="op">:</span> segundos <span class="op">&lt;</span> <span class="dv">3600</span> <span class="op">?</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(segundos <span class="op">/</span> <span class="dv">60</span>) <span class="op">&lt;=</span> <span class="dv">1</span> <span class="op">?</span> <span class="st">"un minuto"</span> <span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(segundos <span class="op">/</span> <span class="dv">60</span>) <span class="op">+</span> <span class="st">" minutos"</span>)</span>
+<span id="cb15-809"><a href="" aria-label="809"></a>  <span class="op">:</span> segundos <span class="op">&lt;</span> <span class="dv">86400</span> <span class="op">*</span> <span class="dv">365</span> <span class="op">?</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(segundos <span class="op">/</span> <span class="dv">86400</span>) <span class="op">+</span> <span class="st">" días"</span></span>
+<span id="cb15-810"><a href="" aria-label="810"></a>  <span class="op">:</span> segundos <span class="op">&lt;</span> <span class="dv">86400</span> <span class="op">*</span> <span class="dv">365</span> <span class="op">*</span> <span class="fl">1e6</span> <span class="op">?</span> <span class="fu">fmt</span>(segundos <span class="op">/</span> (<span class="dv">86400</span> <span class="op">*</span> <span class="dv">365</span>)) <span class="op">+</span> <span class="st">" años"</span></span>
+<span id="cb15-811"><a href="" aria-label="811"></a>  <span class="op">:</span> <span class="st">"más de un millón de años"</span></span>
+<span id="cb15-812"><a href="" aria-label="812"></a>nivel <span class="op">=</span> bits <span class="op">&lt;</span> <span class="dv">40</span> <span class="op">?</span> [<span class="st">"Muy débil"</span><span class="op">,</span> <span class="st">"#c8102e"</span>] <span class="op">:</span> bits <span class="op">&lt;</span> <span class="dv">60</span> <span class="op">?</span> [<span class="st">"Débil"</span><span class="op">,</span> <span class="st">"#e9a23b"</span>] <span class="op">:</span> bits <span class="op">&lt;</span> <span class="dv">80</span> <span class="op">?</span> [<span class="st">"Aceptable"</span><span class="op">,</span> <span class="st">"#4a90c8"</span>] <span class="op">:</span> [<span class="st">"Robusta"</span><span class="op">,</span> <span class="st">"#2a9d8f"</span>]</span>
+<span id="cb15-813"><a href="" aria-label="813"></a><span class="fu">html</span><span class="vs">`&lt;div style="margin-top:.6em"&gt;</span></span>
+<span id="cb15-814"><a href="" aria-label="814"></a><span class="vs">  &lt;div class="barra"&gt;&lt;div style="width:</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">100</span><span class="op">,</span> bits <span class="op">/</span> <span class="fl">1.2</span>)<span class="sc">}</span><span class="vs">%; background:</span><span class="sc">${</span>nivel[<span class="dv">1</span>]<span class="sc">}</span><span class="vs">"&gt;&lt;/div&gt;&lt;/div&gt;</span></span>
+<span id="cb15-815"><a href="" aria-label="815"></a><span class="vs">  &lt;p style="font-size:.8em; margin-top:.5em"&gt;&lt;b style="color:</span><span class="sc">${</span>nivel[<span class="dv">1</span>]<span class="sc">}</span><span class="vs">"&gt;</span><span class="sc">${</span>nivel[<span class="dv">0</span>]<span class="sc">}</span><span class="vs">&lt;/b&gt;: unos </span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(bits)<span class="sc">}</span><span class="vs"> bits de entropía.</span></span>
+<span id="cb15-816"><a href="" aria-label="816"></a><span class="vs">  Tiempo estimado para adivinarla por fuerza bruta: &lt;b&gt;</span><span class="sc">${</span>tiempo<span class="sc">}</span><span class="vs">&lt;/b&gt;.</span></span>
+<span id="cb15-817"><a href="" aria-label="817"></a><span class="vs">  </span><span class="sc">${</span>comun <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;br&gt;⚠️ Contiene palabras o patrones muy comunes, que los atacantes prueban primero.`</span> <span class="op">:</span> <span class="st">""</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb15-818"><a href="" aria-label="818"></a><span class="vs">&lt;/div&gt;`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="tarjeta control">
+<p><strong>Lección:</strong> la longitud gana a la complejidad. Una frase de cuatro o cinco palabras al azar supera a una contraseña corta “rara”. Y ninguna contraseña sustituye a la <strong>autenticación multifactor</strong>.</p>
+</div>
+</div>
+<p><span class="pie">Supuesto: 100 mil millones de intentos por segundo sobre un hash débil. Estimación didáctica.</span></p>
+</section>
+<section id="autodiagnóstico-rápido-para-una-entidad-supervisada" class="slide level2">
+<h2>Autodiagnóstico rápido para una entidad supervisada</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb16" data-startfrom="833" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 832;"><span id="cb16-833"><a href="" aria-label="833"></a>viewof marcados <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>([</span>
+<span id="cb16-834"><a href="" aria-label="834"></a>  <span class="st">"Autenticación para accesos privilegiados y canales de afiliados"</span><span class="op">,</span></span>
+<span id="cb16-835"><a href="" aria-label="835"></a>  <span class="st">"Respaldos inmutables y fuera de línea, probados en 6 meses"</span><span class="op">,</span></span>
+<span id="cb16-836"><a href="" aria-label="836"></a>  <span class="st">"Inventario de modelos de IA con responsable asignado"</span><span class="op">,</span></span>
+<span id="cb16-837"><a href="" aria-label="837"></a>  <span class="st">"Gestión de riesgo de terceros (nube, custodios, fintech)"</span><span class="op">,</span></span>
+<span id="cb16-838"><a href="" aria-label="838"></a>  <span class="st">"Simulacro de ciberincidente con la alta dirección en el último año"</span><span class="op">,</span></span>
+<span id="cb16-839"><a href="" aria-label="839"></a>  <span class="st">"Plan de comunicación a afiliados ante incidentes"</span><span class="op">,</span></span>
+<span id="cb16-840"><a href="" aria-label="840"></a>  <span class="st">"Monitoreo 24/7 con casos de uso de fraude en retiros y traslados"</span><span class="op">,</span></span>
+<span id="cb16-841"><a href="" aria-label="841"></a>  <span class="st">"Simulaciones periódicas de phishing al personal"</span><span class="op">,</span></span>
+<span id="cb16-842"><a href="" aria-label="842"></a>  <span class="st">"Política de uso de IA generativa para colaboradores"</span><span class="op">,</span></span>
+<span id="cb16-843"><a href="" aria-label="843"></a>  <span class="st">"Intercambio de inteligencia de amenazas con supervisor y pares"</span></span>
+<span id="cb16-844"><a href="" aria-label="844"></a>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Marque lo que su entidad ya tiene"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-16" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div><div class="column" style="width:42%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb17" data-startfrom="851" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 850;"><span id="cb17-851"><a href="" aria-label="851"></a>pct <span class="op">=</span> marcados<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="dv">10</span></span>
+<span id="cb17-852"><a href="" aria-label="852"></a>etapa <span class="op">=</span> pct <span class="op">&lt;</span> <span class="dv">40</span> <span class="op">?</span> [<span class="st">"Inicial"</span><span class="op">,</span> <span class="st">"#c8102e"</span><span class="op">,</span> <span class="st">"Priorice MFA, respaldos y plan de incidentes: son los controles con mayor reducción de riesgo por colón o dólar invertido."</span>]</span>
+<span id="cb17-853"><a href="" aria-label="853"></a>  <span class="op">:</span> pct <span class="op">&lt;</span> <span class="dv">70</span> <span class="op">?</span> [<span class="st">"En desarrollo"</span><span class="op">,</span> <span class="st">"#e9a23b"</span><span class="op">,</span> <span class="st">"Formalice la gobernanza: responsables, métricas e informes a junta directiva."</span>]</span>
+<span id="cb17-854"><a href="" aria-label="854"></a>  <span class="op">:</span> pct <span class="op">&lt;</span> <span class="dv">90</span> <span class="op">?</span> [<span class="st">"Gestionado"</span><span class="op">,</span> <span class="st">"#4a90c8"</span><span class="op">,</span> <span class="st">"Pruebe lo que tiene: simulacros con la alta dirección y ejercicios con terceros críticos."</span>]</span>
+<span id="cb17-855"><a href="" aria-label="855"></a>  <span class="op">:</span> [<span class="st">"Avanzado"</span><span class="op">,</span> <span class="st">"#2a9d8f"</span><span class="op">,</span> <span class="st">"Comparta lo aprendido: su experiencia puede elevar la resiliencia de todo el sector."</span>]</span>
+<span id="cb17-856"><a href="" aria-label="856"></a><span class="fu">html</span><span class="vs">`&lt;div class="cifra" style="color:</span><span class="sc">${</span>etapa[<span class="dv">1</span>]<span class="sc">}</span><span class="vs">"&gt;</span><span class="sc">${</span>pct<span class="sc">}</span><span class="vs">%&lt;/div&gt;</span></span>
+<span id="cb17-857"><a href="" aria-label="857"></a><span class="vs">&lt;div class="barra" style="margin:.4em 0"&gt;&lt;div style="width:</span><span class="sc">${</span>pct<span class="sc">}</span><span class="vs">%; background:</span><span class="sc">${</span>etapa[<span class="dv">1</span>]<span class="sc">}</span><span class="vs">"&gt;&lt;/div&gt;&lt;/div&gt;</span></span>
+<span id="cb17-858"><a href="" aria-label="858"></a><span class="vs">&lt;p style="font-size:.85em"&gt;&lt;b&gt;Etapa: </span><span class="sc">${</span>etapa[<span class="dv">0</span>]<span class="sc">}</span><span class="vs">&lt;/b&gt;&lt;/p&gt;</span></span>
+<span id="cb17-859"><a href="" aria-label="859"></a><span class="vs">&lt;div class="tarjeta" style="border-left-color:</span><span class="sc">${</span>etapa[<span class="dv">1</span>]<span class="sc">}</span><span class="vs">"&gt;</span><span class="sc">${</span>etapa[<span class="dv">2</span>]<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-17-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-17-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-17-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="tablero-para-la-junta-directiva" class="slide level2">
+<h2>Tablero para la junta directiva</h2>
+<p>Ajuste los valores de una entidad hipotética. El semáforo compara cada indicador con su meta.</p>
+<div class="columns">
+<div class="column" style="width:38%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb18" data-startfrom="872" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 871;"><span id="cb18-872"><a href="" aria-label="872"></a>viewof mfa <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">88</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"MFA resistente a phishing (%)"</span>})</span>
+<span id="cb18-873"><a href="" aria-label="873"></a>viewof vulns <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">30</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Vulnerabilidades críticas vencidas"</span>})</span>
+<span id="cb18-874"><a href="" aria-label="874"></a>viewof salida <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">62</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Proveedores con prueba de salida (%)"</span>})</span>
+<span id="cb18-875"><a href="" aria-label="875"></a>viewof inventarioIA <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">75</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Casos de IA inventariados (%)"</span>})</span>
+<span id="cb18-876"><a href="" aria-label="876"></a>viewof recuperacion <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Sistemas críticos con recuperación probada (%)"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-18-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-18-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-18-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-18-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-18-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:62%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb19" data-startfrom="881" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 880;"><span id="cb19-881"><a href="" aria-label="881"></a>semaforo <span class="op">=</span> (v<span class="op">,</span> meta<span class="op">,</span> menor) <span class="kw">=&gt;</span> {</span>
+<span id="cb19-882"><a href="" aria-label="882"></a>  <span class="cf">if</span> (menor) <span class="cf">return</span> v <span class="op">&lt;=</span> meta <span class="op">?</span> <span class="st">"#2a9d8f"</span> <span class="op">:</span> v <span class="op">&lt;=</span> <span class="dv">5</span> <span class="op">?</span> <span class="st">"#e9a23b"</span> <span class="op">:</span> <span class="st">"#c8102e"</span><span class="op">;</span></span>
+<span id="cb19-883"><a href="" aria-label="883"></a>  <span class="cf">return</span> v <span class="op">&gt;=</span> meta <span class="op">?</span> <span class="st">"#2a9d8f"</span> <span class="op">:</span> v <span class="op">&gt;=</span> meta <span class="op">*</span> <span class="fl">0.75</span> <span class="op">?</span> <span class="st">"#e9a23b"</span> <span class="op">:</span> <span class="st">"#c8102e"</span><span class="op">;</span></span>
+<span id="cb19-884"><a href="" aria-label="884"></a>}</span>
+<span id="cb19-885"><a href="" aria-label="885"></a>tablero <span class="op">=</span> [</span>
+<span id="cb19-886"><a href="" aria-label="886"></a>  {<span class="dt">n</span><span class="op">:</span> <span class="st">"Activos críticos con autenticación multifactor (MFA) resistente a phishing"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> mfa<span class="op">,</span> <span class="dt">meta</span><span class="op">:</span> <span class="dv">95</span><span class="op">,</span> <span class="dt">txt</span><span class="op">:</span> <span class="st">"≥ 95 %"</span><span class="op">,</span> <span class="dt">w</span><span class="op">:</span> mfa}<span class="op">,</span></span>
+<span id="cb19-887"><a href="" aria-label="887"></a>  {<span class="dt">n</span><span class="op">:</span> <span class="st">"Vulnerabilidades críticas fuera de plazo"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> vulns<span class="op">,</span> <span class="dt">meta</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">txt</span><span class="op">:</span> <span class="st">"= 0"</span><span class="op">,</span> <span class="dt">w</span><span class="op">:</span> vulns <span class="op">/</span> <span class="dv">30</span> <span class="op">*</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">menor</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb19-888"><a href="" aria-label="888"></a>  {<span class="dt">n</span><span class="op">:</span> <span class="st">"Proveedores críticos con prueba de salida"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> salida<span class="op">,</span> <span class="dt">meta</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">txt</span><span class="op">:</span> <span class="st">"100 %"</span><span class="op">,</span> <span class="dt">w</span><span class="op">:</span> salida}<span class="op">,</span></span>
+<span id="cb19-889"><a href="" aria-label="889"></a>  {<span class="dt">n</span><span class="op">:</span> <span class="st">"Casos de IA inventariados y clasificados"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> inventarioIA<span class="op">,</span> <span class="dt">meta</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">txt</span><span class="op">:</span> <span class="st">"100 %"</span><span class="op">,</span> <span class="dt">w</span><span class="op">:</span> inventarioIA}<span class="op">,</span></span>
+<span id="cb19-890"><a href="" aria-label="890"></a>  {<span class="dt">n</span><span class="op">:</span> <span class="st">"Sistemas críticos con recuperación probada"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> recuperacion<span class="op">,</span> <span class="dt">meta</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">txt</span><span class="op">:</span> <span class="st">"100 %"</span><span class="op">,</span> <span class="dt">w</span><span class="op">:</span> recuperacion}</span>
+<span id="cb19-891"><a href="" aria-label="891"></a>]<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({<span class="op">...</span>d<span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="fu">semaforo</span>(d<span class="op">.</span><span class="at">v</span><span class="op">,</span> d<span class="op">.</span><span class="at">meta</span><span class="op">,</span> d<span class="op">.</span><span class="at">menor</span>)}))</span>
+<span id="cb19-892"><a href="" aria-label="892"></a>verdes <span class="op">=</span> tablero<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">c</span> <span class="op">===</span> <span class="st">"#2a9d8f"</span>)<span class="op">.</span><span class="at">length</span></span>
+<span id="cb19-893"><a href="" aria-label="893"></a><span class="fu">html</span><span class="vs">`&lt;div class="tablero"&gt;</span></span>
+<span id="cb19-894"><a href="" aria-label="894"></a><span class="vs">  &lt;div class="fila" style="font-weight:700; color:#4a5a6a"&gt;&lt;span&gt;Indicador&lt;/span&gt;&lt;span&gt;Valor actual&lt;/span&gt;&lt;span&gt;Meta&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;</span></span>
+<span id="cb19-895"><a href="" aria-label="895"></a><span class="vs">  </span><span class="sc">${</span>tablero<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;div class="fila"&gt;</span></span>
+<span id="cb19-896"><a href="" aria-label="896"></a><span class="vs">    &lt;span&gt;</span><span class="sc">${</span>d<span class="op">.</span><span class="at">n</span><span class="sc">}</span><span class="vs">&lt;/span&gt;</span></span>
+<span id="cb19-897"><a href="" aria-label="897"></a><span class="vs">    &lt;div class="barra" style="height:18px"&gt;&lt;div style="width:</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">2</span><span class="op">,</span> d<span class="op">.</span><span class="at">w</span>)<span class="sc">}</span><span class="vs">%; background:</span><span class="sc">${</span>d<span class="op">.</span><span class="at">c</span><span class="sc">}</span><span class="vs">"&gt;&lt;/div&gt;&lt;/div&gt;</span></span>
+<span id="cb19-898"><a href="" aria-label="898"></a><span class="vs">    &lt;span&gt;</span><span class="sc">${</span>d<span class="op">.</span><span class="at">txt</span><span class="sc">}</span><span class="vs">&lt;/span&gt;</span></span>
+<span id="cb19-899"><a href="" aria-label="899"></a><span class="vs">    &lt;div class="sem" style="background:</span><span class="sc">${</span>d<span class="op">.</span><span class="at">c</span><span class="sc">}</span><span class="vs">"&gt;&lt;/div&gt;</span></span>
+<span id="cb19-900"><a href="" aria-label="900"></a><span class="vs">  &lt;/div&gt;`</span>)<span class="sc">}</span></span>
+<span id="cb19-901"><a href="" aria-label="901"></a><span class="vs">&lt;/div&gt;</span></span>
+<span id="cb19-902"><a href="" aria-label="902"></a><span class="vs">&lt;p style="font-size:.75em; margin-top:.6em"&gt;&lt;b&gt;</span><span class="sc">${</span>verdes<span class="sc">}</span><span class="vs"> de 5&lt;/b&gt; indicadores en meta. </span><span class="sc">${</span>verdes <span class="op">&lt;</span> <span class="dv">3</span> <span class="op">?</span> <span class="st">"La junta debería pedir un plan con responsables y fechas."</span> <span class="op">:</span> verdes <span class="op">&lt;</span> <span class="dv">5</span> <span class="op">?</span> <span class="st">"Avance razonable: priorizar los indicadores en rojo."</span> <span class="op">:</span> <span class="st">"Buen nivel: el reto ahora es sostenerlo y probarlo."</span><span class="sc">}</span><span class="vs">&lt;/p&gt;`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-19-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-19-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-19-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-19-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<p><span class="pie">Valores ilustrativos. Cada entidad define umbrales según su criticidad, apetito de riesgo y obligaciones regulatorias.</span></p>
+<aside class="notes">
+<p>Mensaje para juntas directivas: no pregunten “¿estamos seguros?”, pregunten por estos cinco números cada trimestre. Un indicador que nunca se mueve probablemente no se está midiendo bien.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="el-marco-internacional-avanza-en-la-misma-dirección" class="slide level2">
+<h2>El marco internacional avanza en la misma dirección</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tarjeta">
+<p><strong>NIST CSF 2.0 (2024).</strong> National Institute of Standards and Technology añade la función “Gobernar” y amplía el alcance a todo tipo de organizaciones.</p>
+</div>
+<div class="tarjeta">
+<p><strong>Unión Europea, DORA.</strong> Reglamento de resiliencia operativa digital aplicable desde enero de 2025: pruebas de resiliencia, reporte de incidentes y supervisión de proveedores tecnológicos críticos.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="tarjeta">
+<p><strong>Unión Europea, Ley de IA.</strong> Clasifica sistemas por nivel de riesgo y exige más controles a los de alto riesgo, entre ellos algunos usados en servicios financieros.</p>
+</div>
+<div class="tarjeta">
+<p><strong>Criptografía poscuántica.</strong> Estándares publicados por NIST en 2024 para empezar la migración del cifrado.</p>
+</div>
+</div></div>
+<div class="fragment">
+<div class="sabia">
+<p><strong>Para nuestra región:</strong> no se trata de copiar normas, sino de adoptar principios proporcionales al tamaño de nuestros mercados y compartir capacidades que ningún supervisor tiene por sí solo.</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="ideas-para-el-salvador" class="title-slide slide level1 seccion center" data-background-color="#12355b">
+<h1>Ideas para El Salvador</h1>
+<p>Lo que se puede hacer.</p>
+</section>
+<section id="el-salvador-una-oportunidad-de-diseño-temprano" class="slide level2">
+<h2>El Salvador: una oportunidad de diseño temprano</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="tarjeta">
+<p><strong>Marco legal de IA.</strong> La Ley de Fomento a Inteligencia Artificial y Tecnologías (Decreto Legislativo 234, febrero de 2025) creó la Agencia Nacional de Inteligencia Artificial (ANIA) como autoridad rectora.</p>
+</div>
+<div class="tarjeta">
+<p><strong>Ciberseguridad y datos.</strong> Leyes de ciberseguridad y de protección de datos personales aprobadas en 2024, con una Agencia de Ciberseguridad del Estado.</p>
+</div>
+<div class="tarjeta">
+<p><strong>Experiencia digital.</strong> Trayectoria propia en activos digitales y servicios financieros digitales.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="pregunta" style="margin-top:.4em">
+<p>¿Cómo conectar innovación, supervisión financiera, protección de datos y resiliencia operativa <strong>antes</strong> de que ocurran los incidentes?</p>
+</div>
+</div></div>
+<p><span class="pie">Fuentes: Asamblea Legislativa de El Salvador, Decreto 234 de 2025; Agencia de Ciberseguridad del Estado.</span></p>
+</section>
+<section id="cinco-ideas-para-llevar" class="slide level2">
+<h2>Cinco ideas para llevar</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li class="fragment">La IA abarata y perfecciona los ataques: el <strong>eslabón humano</strong> sigue siendo el más explotado.</li>
+<li class="fragment">En pensiones, el activo crítico es la <strong>confianza</strong> de largo plazo.</li>
+<li class="fragment">La ciberseguridad es responsabilidad de la <strong>junta directiva</strong>, no solo del área de TI.</li>
+<li class="fragment">La resiliencia se demuestra <strong>probando</strong>: respaldos, simulacros, procesos manuales.</li>
+<li class="fragment">Ningún país lo resuelve solo: la <strong>cooperación regional</strong> multiplica la defensa.</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="pregunta">
+<p>¿Qué decisión tomaría su entidad <strong>esta semana</strong> si supiera que mañana sufrirá un ciberataque?</p>
+</div>
+</div></div>
+</section>
+<section id="fuentes-seleccionadas" class="slide level2">
+<h2>Fuentes seleccionadas</h2>
+<ul>
+<li>BIS, <em>Regulating AI in the financial sector: recent developments and main challenges</em>, FSI Insights 63, 2024.</li>
+<li>BIS, <em>When machines attack: frontier AI cyber threats and policy responses in the financial sector</em>, 2026.</li>
+<li>NIST, <em>Cybersecurity Framework 2.0</em>, 2024; estándares de criptografía poscuántica, 2024.</li>
+<li>Unión Europea, Reglamento DORA y Ley de Inteligencia Artificial.</li>
+<li>MICITT, <em>Estrategia Nacional de Ciberseguridad de Costa Rica 2023–2027</em>.</li>
+<li>Asamblea Legislativa de El Salvador, <em>Ley de Fomento a Inteligencia Artificial y Tecnologías</em>, Decreto 234, 2025.</li>
+<li>SUPEN, <em>Informe de Riesgos</em>, setiembre 2026; <em>Diagnóstico del uso actual de la inteligencia artificial</em>.</li>
+<li>WTW, <em>Artificial intelligence and pensions: Cyber risk</em>, 2025.</li>
+</ul>
+<p><span class="pie">La presentación distingue ejemplos ilustrativos de hechos documentados. Controles y umbrales deben adaptarse a la regulación y realidad de cada país y entidad.</span></p>
+</section>
+<section id="gracias" class="slide level2 cierre" data-background-color="#12355b">
+<h2>Gracias</h2>
+<div class="frase" style="color:#fff">
+<p>La confianza no se automatiza. Se diseña, se prueba y se demuestra.</p>
+</div>
+<div style="color:#d6e4f2; font-size:.85em; margin:.6em 0">
+<p><strong>Innovar</strong> con propósito. <strong>Proteger</strong> datos, ahorro, decisiones y continuidad. <strong>Cooperar</strong> entre países, supervisores, industria y ciudadanía.</p>
+</div>
+<div style="color:#fff">
+<p><strong>Preguntas y conversación</strong></p>
+<p>Superintendencia de Pensiones, Costa Rica</p>
+</div>
+<div class="franja">
+
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Costa Rica 🇨🇷 y El Salvador 🇸🇻 | Innovar con confianza</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ciberseguridad_ia_cr_sv_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBjb250cm9sZXMgPSBJbnB1dHMucmFuZ2UoWzAsIDkwXSwge3ZhbHVlOiAzMCwgc3RlcDogNSwgbGFiZWw6IFwiTWFkdXJleiBkZSBjb250cm9sZXMgKCUpXCJ9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJyaWVzZ29zID0gW1xyXG4gIHt0OiBcIklBIGdlbmVyYXRpdmFcIiwgcDogNC41LCBpOiAzLjh9LFxyXG4gIHt0OiBcIkRlZXBmYWtlc1wiLCBwOiA0LjIsIGk6IDQuM30sXHJcbiAge3Q6IFwiUmFuc29td2FyZSBjb24gSUFcIiwgcDogMy44LCBpOiA0Ljh9LFxyXG4gIHt0OiBcIk51YmUgeSB0ZXJjZXJvc1wiLCBwOiAzLjAsIGk6IDQuNX0sXHJcbiAge3Q6IFwiQVBJcyAvIG9wZW4gZmluYW5jZVwiLCBwOiAzLjIsIGk6IDMuNH0sXHJcbiAge3Q6IFwiQ3JpcHRvYWN0aXZvc1wiLCBwOiAyLjYsIGk6IDMuMH0sXHJcbiAge3Q6IFwiQ3XDoW50aWNhXCIsIHA6IDEuNiwgaTogNC45fSxcclxuICB7dDogXCJTZXNnbyBlbiBtb2RlbG9zXCIsIHA6IDMuNSwgaTogMy4wfVxyXG5dXHJcbnJlc2lkdWFsID0gcmllc2dvcy5tYXAoZCA9PiAoey4uLmQsXHJcbiAgcDI6IE1hdGgubWF4KDAuMywgZC5wICogKDEgLSAwLjY1ICogY29udHJvbGVzIC8gMTAwKSksXHJcbiAgaTI6IE1hdGgubWF4KDAuMywgZC5pICogKDEgLSAwLjM1ICogY29udHJvbGVzIC8gMTAwKSlcclxufSkpXHJcbmNlbGRhcyA9IEFycmF5LmZyb20oe2xlbmd0aDogMjV9LCAoXywgaykgPT4ge1xyXG4gIGNvbnN0IHggPSBrICUgNSwgeSA9IE1hdGguZmxvb3IoayAvIDUpO1xyXG4gIHJldHVybiB7eDE6IHgsIHgyOiB4ICsgMSwgeTE6IHksIHkyOiB5ICsgMSwgczogKHggKyAxKSAqICh5ICsgMSl9O1xyXG59KVxyXG5QbG90LnBsb3Qoe1xyXG4gIHdpZHRoOiAxMDUwLCBoZWlnaHQ6IDM4MCwgbWFyZ2luTGVmdDogNTAsIG1hcmdpblJpZ2h0OiAxNDAsIHN0eWxlOiB7Zm9udFNpemU6IFwiMTRweFwifSxcclxuICB4OiB7ZG9tYWluOiBbMCwgNV0sIGxhYmVsOiBcIlByb2JhYmlsaWRhZCDihpJcIn0sXHJcbiAgeToge2RvbWFpbjogWzAsIDVdLCBsYWJlbDogXCLihpEgSW1wYWN0b1wifSxcclxuICBjb2xvcjoge3R5cGU6IFwibGluZWFyXCIsIGRvbWFpbjogWzEsIDI1XSwgcmFuZ2U6IFtcIiNkOWYwZThcIiwgXCIjZmJlOWI3XCIsIFwiI2Y2YjRiNFwiXX0sXHJcbiAgbWFya3M6IFtcclxuICAgIFBsb3QucmVjdChjZWxkYXMsIHt4MTogXCJ4MVwiLCB4MjogXCJ4MlwiLCB5MTogXCJ5MVwiLCB5MjogXCJ5MlwiLCBmaWxsOiBcInNcIiwgaW5zZXQ6IDF9KSxcclxuICAgIFBsb3QubGluayhyZXNpZHVhbCwge3gxOiBcInBcIiwgeTE6IFwiaVwiLCB4MjogXCJwMlwiLCB5MjogXCJpMlwiLCBzdHJva2U6IFwiIzRhOTBjOFwiLCBzdHJva2VEYXNoYXJyYXk6IFwiNCwzXCIsIG1hcmtlckVuZDogXCJhcnJvd1wifSksXHJcbiAgICBQbG90LmRvdChyZXNpZHVhbCwge3g6IFwicFwiLCB5OiBcImlcIiwgcjogNiwgZmlsbDogXCIjOWFhOGI2XCJ9KSxcclxuICAgIFBsb3QuZG90KHJlc2lkdWFsLCB7eDogXCJwMlwiLCB5OiBcImkyXCIsIHI6IDgsIGZpbGw6IFwiIzEyMzU1YlwifSksXHJcbiAgICBQbG90LnRleHQocmVzaWR1YWwsIHt4OiBcInAyXCIsIHk6IFwiaTJcIiwgdGV4dDogXCJ0XCIsIGR4OiAxMiwgdGV4dEFuY2hvcjogXCJzdGFydFwiLCBmb250U2l6ZTogMTMsIGZpbGw6IFwiIzFkMjczM1wifSlcclxuICBdXHJcbn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBkb25kZUNvbnRyb2wgPSBJbnB1dHMucmFkaW8oW1xyXG4gIFwiQS4gQmxvcXVlYXIgdG9kYSBsYSBJQVwiLFxyXG4gIFwiQi4gUmV2aXNhciBzb2xvIGFsIHByb3ZlZWRvclwiLFxyXG4gIFwiQy4gQ29udHJvbGFyIGVsIGNpY2xvIGNvbXBsZXRvXCJcclxuXSwge2xhYmVsOiBcIlN1IHJlc3B1ZXN0YVwifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZmJDb250cm9sID0gKHtcclxuICBcIkEuIEJsb3F1ZWFyIHRvZGEgbGEgSUFcIjogW1wiYmFkXCIsIFwiUmVkdWNlIG9wb3J0dW5pZGFkZXMsIHBlcm8gbm8gZWxpbWluYSBlbCB1c28gaW5mb3JtYWwgZGUgaGVycmFtaWVudGFzIHBvciBlbCBwZXJzb25hbCBuaSBsb3Mgcmllc2dvcyBxdWUgeWEgdHJhZW4gbG9zIHRlcmNlcm9zLlwiXSxcclxuICBcIkIuIFJldmlzYXIgc29sbyBhbCBwcm92ZWVkb3JcIjogW1wiYmFkXCIsIFwiRXMgbmVjZXNhcmlvIHBlcm8gaW5zdWZpY2llbnRlOiBsb3MgZGF0b3MsIGxvcyB1c3VhcmlvcywgbG9zIHByb2Nlc29zIHkgbGFzIGRlY2lzaW9uZXMgc2lndWVuIHNpZW5kbyByZXNwb25zYWJpbGlkYWQgZGUgbGEgZW50aWRhZC5cIl0sXHJcbiAgXCJDLiBDb250cm9sYXIgZWwgY2ljbG8gY29tcGxldG9cIjogW1wib2tcIiwgXCJDcml0ZXJpbyByZWNvbWVuZGFkbzogaW52ZW50YXJpbywgY2xhc2lmaWNhY2nDs24gZGVsIGNhc28gcG9yIGltcGFjdG8sIGRhdG9zLCBtb2RlbG8sIHByb3ZlZWRvciwgdXN1YXJpbywgZGVjaXNpw7NuLCBtb25pdG9yZW8geSByZXRpcm8gZGVsIHNpc3RlbWEuXCJdXHJcbn0pXHJcbmRvbmRlQ29udHJvbCA9PSBudWxsXHJcbiAgPyBodG1sYDxkaXYgY2xhc3M9XCJmYiBuZXV0cm9cIj5Wb3RlIGEgbWFubyBhbHphZGEgeSBsdWVnbyBzZWxlY2Npb25lIGxhIG9wY2nDs24gbcOhcyB2b3RhZGEuPC9kaXY+YFxyXG4gIDogaHRtbGA8ZGl2IGNsYXNzPVwiZmIgJHtmYkNvbnRyb2xbZG9uZGVDb250cm9sXVswXX1cIj4ke2ZiQ29udHJvbFtkb25kZUNvbnRyb2xdWzBdID09PSBcIm9rXCIgPyBcIuKclCBcIiA6IFwi4pyWIFwifSR7ZmJDb250cm9sW2RvbmRlQ29udHJvbF1bMV19PC9kaXY+YFxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYWZpbGlhZG9zID0gSW5wdXRzLnJhbmdlKFs1MDAwMCwgMzAwMDAwMF0sIHt2YWx1ZTogODAwMDAwLCBzdGVwOiAxMDAwMCwgbGFiZWw6IFwiQWZpbGlhZG9zXCJ9KVxyXG52aWV3b2YgcGVuc2lvbmFkb3MgPSBJbnB1dHMucmFuZ2UoWzAsIDIwMDAwMF0sIHt2YWx1ZTogMjAwMDAsIHN0ZXA6IDEwMDAsIGxhYmVsOiBcIlBlbnNpb25hZG9zIGNvbiBwYWdvIG1lbnN1YWxcIn0pXHJcbnZpZXdvZiBkaWFzID0gSW5wdXRzLnJhbmdlKFsxLCAzMF0sIHt2YWx1ZTogNywgc3RlcDogMSwgbGFiZWw6IFwiRMOtYXMgc2luIHNpc3RlbWFzXCJ9KVxyXG52aWV3b2YgdHJhbWl0ZXMgPSBJbnB1dHMucmFuZ2UoWzAuNSwgMTBdLCB7dmFsdWU6IDIsIHN0ZXA6IDAuNSwgbGFiZWw6IFwiVHLDoW1pdGVzIGRpYXJpb3MgcG9yIGNhZGEgMSAwMDAgYWZpbGlhZG9zXCJ9KVxyXG52aWV3b2YgY29zdG9EaWEgPSBJbnB1dHMucmFuZ2UoWzEwMDAwLCA1MDAwMDBdLCB7dmFsdWU6IDgwMDAwLCBzdGVwOiAxMDAwMCwgbGFiZWw6IFwiQ29zdG8gZGlhcmlvIGRlIHJlc3B1ZXN0YSAoVVMkKVwifSlcclxudmlld29mIGZpbHRyYWRvID0gSW5wdXRzLnJhbmdlKFswLCAxMDBdLCB7dmFsdWU6IDI1LCBzdGVwOiA1LCBsYWJlbDogXCIlIGRlIGV4cGVkaWVudGVzIGZpbHRyYWRvc1wifSlcclxudmlld29mIGNvc3RvUmVnID0gSW5wdXRzLnJhbmdlKFsxLCA1MF0sIHt2YWx1ZTogMTIsIHN0ZXA6IDEsIGxhYmVsOiBcIkNvc3RvIHBvciBleHBlZGllbnRlIGZpbHRyYWRvIChVUyQpXCJ9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJmbXQgPSAoeCkgPT4gTWF0aC5yb3VuZCh4KS50b0xvY2FsZVN0cmluZyhcImVzLUNSXCIpXHJcbnVzZCA9ICh4KSA9PiBcIlVTJCBcIiArICh4ID49IDFlNiA/ICh4IC8gMWU2KS50b0ZpeGVkKDEpICsgXCIgTVwiIDogZm10KHgpKVxyXG50QWZlY3QgPSBhZmlsaWFkb3MgLyAxMDAwICogdHJhbWl0ZXMgKiBkaWFzXHJcbnBhZ29zUmllc2dvID0gcGVuc2lvbmFkb3MgKiBNYXRoLm1pbigxLCBkaWFzIC8gMzApXHJcbmV4cGVkaWVudGVzID0gYWZpbGlhZG9zICogZmlsdHJhZG8gLyAxMDBcclxuY29zdG9Ub3RhbCA9IGRpYXMgKiBjb3N0b0RpYSArIGV4cGVkaWVudGVzICogY29zdG9SZWdcclxuaHRtbGA8ZGl2IGNsYXNzPVwia3Bpc1wiPlxyXG4gIDxkaXYgY2xhc3M9XCJrcGlcIj48ZGl2IGNsYXNzPVwidlwiPiR7Zm10KHRBZmVjdCl9PC9kaXY+PGRpdiBjbGFzcz1cImVcIj50csOhbWl0ZXMgZGUgYWZpbGlhZG9zIGRldGVuaWRvczwvZGl2PjwvZGl2PlxyXG4gIDxkaXYgY2xhc3M9XCJrcGlcIj48ZGl2IGNsYXNzPVwidlwiPiR7Zm10KHBhZ29zUmllc2dvKX08L2Rpdj48ZGl2IGNsYXNzPVwiZVwiPnBhZ29zIGRlIHBlbnNpw7NuIGVuIHJpZXNnbyBkZSBhdHJhc28gKGVzcGVyYWRvKTwvZGl2PjwvZGl2PlxyXG4gIDxkaXYgY2xhc3M9XCJrcGlcIj48ZGl2IGNsYXNzPVwidlwiPiR7Zm10KGV4cGVkaWVudGVzKX08L2Rpdj48ZGl2IGNsYXNzPVwiZVwiPmV4cGVkaWVudGVzIGV4cHVlc3RvczwvZGl2PjwvZGl2PlxyXG4gIDxkaXYgY2xhc3M9XCJrcGlcIiBzdHlsZT1cImJvcmRlci10b3AtY29sb3I6I2M4MTAyZVwiPjxkaXYgY2xhc3M9XCJ2XCIgc3R5bGU9XCJjb2xvcjojYzgxMDJlXCI+JHt1c2QoY29zdG9Ub3RhbCl9PC9kaXY+PGRpdiBjbGFzcz1cImVcIj5jb3N0byBkaXJlY3RvIGVzdGltYWRvPC9kaXY+PC9kaXY+XHJcbjwvZGl2PmBcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcclxuICB3aWR0aDogNzAwLCBoZWlnaHQ6IDIyMCwgbWFyZ2luTGVmdDogMjAwLCBzdHlsZToge2ZvbnRTaXplOiBcIjE0cHhcIn0sXHJcbiAgeDoge2xhYmVsOiBcIlVTJFwiLCB0aWNrRm9ybWF0OiBcInNcIiwgZ3JpZDogdHJ1ZX0sXHJcbiAgeToge2xhYmVsOiBudWxsfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5iYXJYKFtcclxuICAgICAge2M6IFwiUmVzcHVlc3RhIHkgcmVjdXBlcmFjacOzblwiLCB2OiBkaWFzICogY29zdG9EaWF9LFxyXG4gICAgICB7YzogXCJOb3RpZmljYWNpw7NuIHkgbW9uaXRvcmVvXCIsIHY6IGV4cGVkaWVudGVzICogY29zdG9SZWd9XHJcbiAgICBdLCB7eTogXCJjXCIsIHg6IFwidlwiLCBmaWxsOiBbXCIjMTIzNTViXCIsIFwiI2M4MTAyZVwiXX0pLFxyXG4gICAgUGxvdC5ydWxlWChbMF0pXHJcbiAgXVxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgcjEgPSBJbnB1dHMucmFkaW8oW1wiUGhpc2hpbmdcIiwgXCJMZWfDrXRpbW9cIl0sIHtsYWJlbDogXCJTdSB2ZXJlZGljdG9cIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InJldHJvID0gKHIsIG9rLCB0eHQpID0+IHIgPT0gbnVsbFxyXG4gID8gaHRtbGA8ZGl2IGNsYXNzPVwiZmIgbmV1dHJvXCI+RWxpamEgdW5hIG9wY2nDs24gcGFyYSB2ZXIgbGEgZXhwbGljYWNpw7NuLjwvZGl2PmBcclxuICA6IHIgPT09IG9rXHJcbiAgICA/IGh0bWxgPGRpdiBjbGFzcz1cImZiIG9rXCI+4pyUIENvcnJlY3RvLiAke3R4dH08L2Rpdj5gXHJcbiAgICA6IGh0bWxgPGRpdiBjbGFzcz1cImZiIGJhZFwiPuKcliBObyBlcyBhc8OtLiAke3R4dH08L2Rpdj5gXHJcbnJldHJvKHIxLCBcIlBoaXNoaW5nXCIsIFwiVXJnZW5jaWEgYXJ0aWZpY2lhbCwgYW1lbmF6YSBkZSBww6lyZGlkYSB5IHVuIGRvbWluaW8gcXVlIGltaXRhIGFsIG9maWNpYWwuIFVuIHN1cGVydmlzb3Igbm8gYmxvcXVlYSBjdWVudGFzIHBvciBTTVMgbmkgcGlkZSBkYXRvcyBwb3IgZW5sYWNlcy5cIilcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiByMiA9IElucHV0cy5yYWRpbyhbXCJQaGlzaGluZ1wiLCBcIkxlZ8OtdGltb1wiXSwge2xhYmVsOiBcIlN1IHZlcmVkaWN0b1wifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InJldHJvKHIyLCBcIkxlZ8OtdGltb1wiLCBcIk5vIHBpZGUgZGF0b3MsIG5vIHByZXNpb25hIHkgb3JpZW50YSBhbCBjYW5hbCBvZmljaWFsLiBBdW4gYXPDrSwgbGEgYnVlbmEgcHLDoWN0aWNhIGVzIHZlcmlmaWNhciBzaWVtcHJlIHBvciB1biBjYW5hbCBxdWUgdXN0ZWQgY29udHJvbGUuXCIpXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgcjMgPSBJbnB1dHMucmFkaW8oW1wiUGhpc2hpbmdcIiwgXCJMZWfDrXRpbW9cIl0sIHtsYWJlbDogXCJTdSB2ZXJlZGljdG9cIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJyZXRybyhyMywgXCJQaGlzaGluZ1wiLCBcIlBhdHLDs24gdMOtcGljbyBkZSBmcmF1ZGUgZGVsIENFTywgaG95IHJlZm9yemFkbyBjb24gZGVlcGZha2VzOiB1cmdlbmNpYSwgc2VjcmV0byB5IGNhbWJpbyBkZSBjdWVudGEuIExhIGRlZmVuc2EgZXMgdW4gcHJvY2VkaW1pZW50byBkZSBkb2JsZSB2ZXJpZmljYWNpw7NuIHBvciBvdHJvIGNhbmFsLCBzaW4gZXhjZXBjaW9uZXMuXCIpXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgY2xhdmUgPSBJbnB1dHMudGV4dCh7bGFiZWw6IFwiRXNjcmliYSB1bmEgY29udHJhc2XDsWEgZGUgZWplbXBsbyAobnVuY2EgdW5hIHJlYWwpXCIsIHZhbHVlOiBcIlBlbnNpb25lczIwMjZcIiwgd2lkdGg6IDQyMH0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJwb29sID0gKC9bYS16XS8udGVzdChjbGF2ZSkgPyAyNiA6IDApICsgKC9bQS1aXS8udGVzdChjbGF2ZSkgPyAyNiA6IDApICsgKC9bMC05XS8udGVzdChjbGF2ZSkgPyAxMCA6IDApICsgKC9bXkEtWmEtejAtOV0vLnRlc3QoY2xhdmUpID8gMzMgOiAwKVxyXG5jb211biA9IC8ocGVuc2lvbnxwYXNzd29yZHxjb250cmFzZXwxMjN8cXdlcnR5fGNvc3RhfHNhbHZhZG9yfDIwMjV8MjAyNnxhZG1pbikvaS50ZXN0KGNsYXZlKVxyXG5iaXRzID0gY2xhdmUubGVuZ3RoID09PSAwID8gMCA6IGNsYXZlLmxlbmd0aCAqIE1hdGgubG9nMihNYXRoLm1heChwb29sLCAxKSkgKiAoY29tdW4gPyAwLjU1IDogMSlcclxuc2VndW5kb3MgPSBNYXRoLnBvdygyLCBiaXRzKSAvIDIgLyAxZTExXHJcbnRpZW1wbyA9IHNlZ3VuZG9zIDwgMSA/IFwibWVub3MgZGUgdW4gc2VndW5kb1wiXHJcbiAgOiBzZWd1bmRvcyA8IDM2MDAgPyAoTWF0aC5yb3VuZChzZWd1bmRvcyAvIDYwKSA8PSAxID8gXCJ1biBtaW51dG9cIiA6IE1hdGgucm91bmQoc2VndW5kb3MgLyA2MCkgKyBcIiBtaW51dG9zXCIpXHJcbiAgOiBzZWd1bmRvcyA8IDg2NDAwICogMzY1ID8gTWF0aC5yb3VuZChzZWd1bmRvcyAvIDg2NDAwKSArIFwiIGTDrWFzXCJcclxuICA6IHNlZ3VuZG9zIDwgODY0MDAgKiAzNjUgKiAxZTYgPyBmbXQoc2VndW5kb3MgLyAoODY0MDAgKiAzNjUpKSArIFwiIGHDsW9zXCJcclxuICA6IFwibcOhcyBkZSB1biBtaWxsw7NuIGRlIGHDsW9zXCJcclxubml2ZWwgPSBiaXRzIDwgNDAgPyBbXCJNdXkgZMOpYmlsXCIsIFwiI2M4MTAyZVwiXSA6IGJpdHMgPCA2MCA/IFtcIkTDqWJpbFwiLCBcIiNlOWEyM2JcIl0gOiBiaXRzIDwgODAgPyBbXCJBY2VwdGFibGVcIiwgXCIjNGE5MGM4XCJdIDogW1wiUm9idXN0YVwiLCBcIiMyYTlkOGZcIl1cclxuaHRtbGA8ZGl2IHN0eWxlPVwibWFyZ2luLXRvcDouNmVtXCI+XHJcbiAgPGRpdiBjbGFzcz1cImJhcnJhXCI+PGRpdiBzdHlsZT1cIndpZHRoOiR7TWF0aC5taW4oMTAwLCBiaXRzIC8gMS4yKX0lOyBiYWNrZ3JvdW5kOiR7bml2ZWxbMV19XCI+PC9kaXY+PC9kaXY+XHJcbiAgPHAgc3R5bGU9XCJmb250LXNpemU6LjhlbTsgbWFyZ2luLXRvcDouNWVtXCI+PGIgc3R5bGU9XCJjb2xvcjoke25pdmVsWzFdfVwiPiR7bml2ZWxbMF19PC9iPjogdW5vcyAke01hdGgucm91bmQoYml0cyl9IGJpdHMgZGUgZW50cm9ww61hLlxyXG4gIFRpZW1wbyBlc3RpbWFkbyBwYXJhIGFkaXZpbmFybGEgcG9yIGZ1ZXJ6YSBicnV0YTogPGI+JHt0aWVtcG99PC9iPi5cclxuICAke2NvbXVuID8gaHRtbGA8YnI+4pqg77iPIENvbnRpZW5lIHBhbGFicmFzIG8gcGF0cm9uZXMgbXV5IGNvbXVuZXMsIHF1ZSBsb3MgYXRhY2FudGVzIHBydWViYW4gcHJpbWVyby5gIDogXCJcIn08L3A+XHJcbjwvZGl2PmBcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBtYXJjYWRvcyA9IElucHV0cy5jaGVja2JveChbXHJcbiAgXCJBdXRlbnRpY2FjacOzbiBwYXJhIGFjY2Vzb3MgcHJpdmlsZWdpYWRvcyB5IGNhbmFsZXMgZGUgYWZpbGlhZG9zXCIsXHJcbiAgXCJSZXNwYWxkb3MgaW5tdXRhYmxlcyB5IGZ1ZXJhIGRlIGzDrW5lYSwgcHJvYmFkb3MgZW4gNiBtZXNlc1wiLFxyXG4gIFwiSW52ZW50YXJpbyBkZSBtb2RlbG9zIGRlIElBIGNvbiByZXNwb25zYWJsZSBhc2lnbmFkb1wiLFxyXG4gIFwiR2VzdGnDs24gZGUgcmllc2dvIGRlIHRlcmNlcm9zIChudWJlLCBjdXN0b2Rpb3MsIGZpbnRlY2gpXCIsXHJcbiAgXCJTaW11bGFjcm8gZGUgY2liZXJpbmNpZGVudGUgY29uIGxhIGFsdGEgZGlyZWNjacOzbiBlbiBlbCDDumx0aW1vIGHDsW9cIixcclxuICBcIlBsYW4gZGUgY29tdW5pY2FjacOzbiBhIGFmaWxpYWRvcyBhbnRlIGluY2lkZW50ZXNcIixcclxuICBcIk1vbml0b3JlbyAyNC83IGNvbiBjYXNvcyBkZSB1c28gZGUgZnJhdWRlIGVuIHJldGlyb3MgeSB0cmFzbGFkb3NcIixcclxuICBcIlNpbXVsYWNpb25lcyBwZXJpw7NkaWNhcyBkZSBwaGlzaGluZyBhbCBwZXJzb25hbFwiLFxyXG4gIFwiUG9sw610aWNhIGRlIHVzbyBkZSBJQSBnZW5lcmF0aXZhIHBhcmEgY29sYWJvcmFkb3Jlc1wiLFxyXG4gIFwiSW50ZXJjYW1iaW8gZGUgaW50ZWxpZ2VuY2lhIGRlIGFtZW5hemFzIGNvbiBzdXBlcnZpc29yIHkgcGFyZXNcIlxyXG5dLCB7bGFiZWw6IFwiTWFycXVlIGxvIHF1ZSBzdSBlbnRpZGFkIHlhIHRpZW5lXCJ9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE3IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoicGN0ID0gbWFyY2Fkb3MubGVuZ3RoICogMTBcclxuZXRhcGEgPSBwY3QgPCA0MCA/IFtcIkluaWNpYWxcIiwgXCIjYzgxMDJlXCIsIFwiUHJpb3JpY2UgTUZBLCByZXNwYWxkb3MgeSBwbGFuIGRlIGluY2lkZW50ZXM6IHNvbiBsb3MgY29udHJvbGVzIGNvbiBtYXlvciByZWR1Y2Npw7NuIGRlIHJpZXNnbyBwb3IgY29sw7NuIG8gZMOzbGFyIGludmVydGlkby5cIl1cclxuICA6IHBjdCA8IDcwID8gW1wiRW4gZGVzYXJyb2xsb1wiLCBcIiNlOWEyM2JcIiwgXCJGb3JtYWxpY2UgbGEgZ29iZXJuYW56YTogcmVzcG9uc2FibGVzLCBtw6l0cmljYXMgZSBpbmZvcm1lcyBhIGp1bnRhIGRpcmVjdGl2YS5cIl1cclxuICA6IHBjdCA8IDkwID8gW1wiR2VzdGlvbmFkb1wiLCBcIiM0YTkwYzhcIiwgXCJQcnVlYmUgbG8gcXVlIHRpZW5lOiBzaW11bGFjcm9zIGNvbiBsYSBhbHRhIGRpcmVjY2nDs24geSBlamVyY2ljaW9zIGNvbiB0ZXJjZXJvcyBjcsOtdGljb3MuXCJdXHJcbiAgOiBbXCJBdmFuemFkb1wiLCBcIiMyYTlkOGZcIiwgXCJDb21wYXJ0YSBsbyBhcHJlbmRpZG86IHN1IGV4cGVyaWVuY2lhIHB1ZWRlIGVsZXZhciBsYSByZXNpbGllbmNpYSBkZSB0b2RvIGVsIHNlY3Rvci5cIl1cclxuaHRtbGA8ZGl2IGNsYXNzPVwiY2lmcmFcIiBzdHlsZT1cImNvbG9yOiR7ZXRhcGFbMV19XCI+JHtwY3R9JTwvZGl2PlxyXG48ZGl2IGNsYXNzPVwiYmFycmFcIiBzdHlsZT1cIm1hcmdpbjouNGVtIDBcIj48ZGl2IHN0eWxlPVwid2lkdGg6JHtwY3R9JTsgYmFja2dyb3VuZDoke2V0YXBhWzFdfVwiPjwvZGl2PjwvZGl2PlxyXG48cCBzdHlsZT1cImZvbnQtc2l6ZTouODVlbVwiPjxiPkV0YXBhOiAke2V0YXBhWzBdfTwvYj48L3A+XHJcbjxkaXYgY2xhc3M9XCJ0YXJqZXRhXCIgc3R5bGU9XCJib3JkZXItbGVmdC1jb2xvcjoke2V0YXBhWzFdfVwiPiR7ZXRhcGFbMl19PC9kaXY+YFxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE4IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIG1mYSA9IElucHV0cy5yYW5nZShbMCwgMTAwXSwge3ZhbHVlOiA4OCwgc3RlcDogMSwgbGFiZWw6IFwiTUZBIHJlc2lzdGVudGUgYSBwaGlzaGluZyAoJSlcIn0pXHJcbnZpZXdvZiB2dWxucyA9IElucHV0cy5yYW5nZShbMCwgMzBdLCB7dmFsdWU6IDcsIHN0ZXA6IDEsIGxhYmVsOiBcIlZ1bG5lcmFiaWxpZGFkZXMgY3LDrXRpY2FzIHZlbmNpZGFzXCJ9KVxyXG52aWV3b2Ygc2FsaWRhID0gSW5wdXRzLnJhbmdlKFswLCAxMDBdLCB7dmFsdWU6IDYyLCBzdGVwOiAxLCBsYWJlbDogXCJQcm92ZWVkb3JlcyBjb24gcHJ1ZWJhIGRlIHNhbGlkYSAoJSlcIn0pXHJcbnZpZXdvZiBpbnZlbnRhcmlvSUEgPSBJbnB1dHMucmFuZ2UoWzAsIDEwMF0sIHt2YWx1ZTogNzUsIHN0ZXA6IDEsIGxhYmVsOiBcIkNhc29zIGRlIElBIGludmVudGFyaWFkb3MgKCUpXCJ9KVxyXG52aWV3b2YgcmVjdXBlcmFjaW9uID0gSW5wdXRzLnJhbmdlKFswLCAxMDBdLCB7dmFsdWU6IDcwLCBzdGVwOiAxLCBsYWJlbDogXCJTaXN0ZW1hcyBjcsOtdGljb3MgY29uIHJlY3VwZXJhY2nDs24gcHJvYmFkYSAoJSlcIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTkiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJzZW1hZm9ybyA9ICh2LCBtZXRhLCBtZW5vcikgPT4ge1xyXG4gIGlmIChtZW5vcikgcmV0dXJuIHYgPD0gbWV0YSA/IFwiIzJhOWQ4ZlwiIDogdiA8PSA1ID8gXCIjZTlhMjNiXCIgOiBcIiNjODEwMmVcIjtcclxuICByZXR1cm4gdiA+PSBtZXRhID8gXCIjMmE5ZDhmXCIgOiB2ID49IG1ldGEgKiAwLjc1ID8gXCIjZTlhMjNiXCIgOiBcIiNjODEwMmVcIjtcclxufVxyXG50YWJsZXJvID0gW1xyXG4gIHtuOiBcIkFjdGl2b3MgY3LDrXRpY29zIGNvbiBhdXRlbnRpY2FjacOzbiBtdWx0aWZhY3RvciAoTUZBKSByZXNpc3RlbnRlIGEgcGhpc2hpbmdcIiwgdjogbWZhLCBtZXRhOiA5NSwgdHh0OiBcIuKJpSA5NSAlXCIsIHc6IG1mYX0sXHJcbiAge246IFwiVnVsbmVyYWJpbGlkYWRlcyBjcsOtdGljYXMgZnVlcmEgZGUgcGxhem9cIiwgdjogdnVsbnMsIG1ldGE6IDAsIHR4dDogXCI9IDBcIiwgdzogdnVsbnMgLyAzMCAqIDEwMCwgbWVub3I6IHRydWV9LFxyXG4gIHtuOiBcIlByb3ZlZWRvcmVzIGNyw610aWNvcyBjb24gcHJ1ZWJhIGRlIHNhbGlkYVwiLCB2OiBzYWxpZGEsIG1ldGE6IDEwMCwgdHh0OiBcIjEwMCAlXCIsIHc6IHNhbGlkYX0sXHJcbiAge246IFwiQ2Fzb3MgZGUgSUEgaW52ZW50YXJpYWRvcyB5IGNsYXNpZmljYWRvc1wiLCB2OiBpbnZlbnRhcmlvSUEsIG1ldGE6IDEwMCwgdHh0OiBcIjEwMCAlXCIsIHc6IGludmVudGFyaW9JQX0sXHJcbiAge246IFwiU2lzdGVtYXMgY3LDrXRpY29zIGNvbiByZWN1cGVyYWNpw7NuIHByb2JhZGFcIiwgdjogcmVjdXBlcmFjaW9uLCBtZXRhOiAxMDAsIHR4dDogXCIxMDAgJVwiLCB3OiByZWN1cGVyYWNpb259XHJcbl0ubWFwKGQgPT4gKHsuLi5kLCBjOiBzZW1hZm9ybyhkLnYsIGQubWV0YSwgZC5tZW5vcil9KSlcclxudmVyZGVzID0gdGFibGVyby5maWx0ZXIoZCA9PiBkLmMgPT09IFwiIzJhOWQ4ZlwiKS5sZW5ndGhcclxuaHRtbGA8ZGl2IGNsYXNzPVwidGFibGVyb1wiPlxyXG4gIDxkaXYgY2xhc3M9XCJmaWxhXCIgc3R5bGU9XCJmb250LXdlaWdodDo3MDA7IGNvbG9yOiM0YTVhNmFcIj48c3Bhbj5JbmRpY2Fkb3I8L3NwYW4+PHNwYW4+VmFsb3IgYWN0dWFsPC9zcGFuPjxzcGFuPk1ldGE8L3NwYW4+PHNwYW4+PC9zcGFuPjwvZGl2PlxyXG4gICR7dGFibGVyby5tYXAoZCA9PiBodG1sYDxkaXYgY2xhc3M9XCJmaWxhXCI+XHJcbiAgICA8c3Bhbj4ke2Qubn08L3NwYW4+XHJcbiAgICA8ZGl2IGNsYXNzPVwiYmFycmFcIiBzdHlsZT1cImhlaWdodDoxOHB4XCI+PGRpdiBzdHlsZT1cIndpZHRoOiR7TWF0aC5tYXgoMiwgZC53KX0lOyBiYWNrZ3JvdW5kOiR7ZC5jfVwiPjwvZGl2PjwvZGl2PlxyXG4gICAgPHNwYW4+JHtkLnR4dH08L3NwYW4+XHJcbiAgICA8ZGl2IGNsYXNzPVwic2VtXCIgc3R5bGU9XCJiYWNrZ3JvdW5kOiR7ZC5jfVwiPjwvZGl2PlxyXG4gIDwvZGl2PmApfVxyXG48L2Rpdj5cclxuPHAgc3R5bGU9XCJmb250LXNpemU6Ljc1ZW07IG1hcmdpbi10b3A6LjZlbVwiPjxiPiR7dmVyZGVzfSBkZSA1PC9iPiBpbmRpY2Fkb3JlcyBlbiBtZXRhLiAke3ZlcmRlcyA8IDMgPyBcIkxhIGp1bnRhIGRlYmVyw61hIHBlZGlyIHVuIHBsYW4gY29uIHJlc3BvbnNhYmxlcyB5IGZlY2hhcy5cIiA6IHZlcmRlcyA8IDUgPyBcIkF2YW5jZSByYXpvbmFibGU6IHByaW9yaXphciBsb3MgaW5kaWNhZG9yZXMgZW4gcm9qby5cIiA6IFwiQnVlbiBuaXZlbDogZWwgcmV0byBhaG9yYSBlcyBzb3N0ZW5lcmxvIHkgcHJvYmFybG8uXCJ9PC9wPmBcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdjb250cm9sZXMnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnZG9uZGVDb250cm9sJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2FmaWxpYWRvcycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwZW5zaW9uYWRvcycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdkaWFzJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3RyYW1pdGVzJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2Nvc3RvRGlhJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2ZpbHRyYWRvJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2Nvc3RvUmVnJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3IxJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3IyJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3IzJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2NsYXZlJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ21hcmNhZG9zJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ21mYScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2dWxucycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzYWxpZGEnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnaW52ZW50YXJpb0lBJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3JlY3VwZXJhY2lvbicpIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../..";
+    window._ojs.paths.runtimeToRoot = "../../..";
+    window._ojs.paths.docToRoot = "";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiado");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiado");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

@@ -1,0 +1,5 @@
+project:
+  type: default
+  output-dir: docs
+  render:
+    - ciberseguridad_ia_cr_sv.qmd
